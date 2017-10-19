@@ -1,0 +1,19 @@
+{
+    "name": "zeevo.me",
+    "scripts": {
+        "prod": "export NODE_ENV=production; npm start"
+    },
+    "dependencies": {
+        "body-parser": "^1.17.2",
+        "express": "*",
+        "method-override": "*",
+        "morgan": "*",
+        "pug": "^2.0.0-rc.2",
+        "serve-favicon": "*",
+        "stylus": "*"
+    },
+    "engines": {
+        "node": "*",
+        "npm": "*"
+    }
+}
