@@ -1,3 +1,6 @@
+var express = require('express');
+var router = express.Router();
+
 var fs = require('fs');
 var path = require('path');
 var request = require('request')
@@ -9,37 +12,29 @@ getGuilds = function () {
             console.log(err);
             return;
         }
-        guilds = JSON.parse(body).guilds
+        guilds = JSON.parse(body).guilds;
     })
 }
 getGuilds();
 var minutes = 30,
-    interval = minutes * 60 * 1000
-setInterval(getGuilds, interval)
+    interval = minutes * 60 * 1000;
+setInterval(getGuilds, interval);
 
-routes = [{
-        name: '/',
-        func: function (req, res) {
-            res.render('index', {
-                homeSelected: 'selected',
-            });
-        }
-    },
-    {
-        name: '/wintermute',
-        func: function (req, res) {
-            res.render('wintermute', {
-                wintermuteSelected: 'selected',
-                guilds: guilds
-            });
-        }
-    },
-    {
-        name: '/about',
-        func: function (req, res) {
-            res.render('about')
-        }
-    }
-]
+router.get('/', (req, res, next) => {
+    res.render('index', {
+        homeSelected: 'selected',
+    });
+});
 
-module.exports = routes;
+router.get('/wintermute', (req, res, next) => {
+    res.render('wintermute', {
+        wintermuteSelected: 'selected',
+        guilds: guilds
+    });
+})
+
+router.get('/about', (req, res, next) => {
+    res.render('about');
+})
+
+module.exports = router;
