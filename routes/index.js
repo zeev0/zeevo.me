@@ -20,9 +20,31 @@ var minutes = 30,
     interval = minutes * 60 * 1000;
 setInterval(getGuilds, interval);
 
+var posts = []
+var postDir = __dirname + '/../views/posts'
+fs.readdirSync(postDir).forEach(file => {
+    // blog
+    // let blogDir = postDir + '/blog'
+    // fs.readdirSync(blogDir).forEach(file => {
+    //     let post = require(blogDir + '/' + file + '/info.json')
+    //     console.log(post)
+    //     posts.push(post)
+    //     router.get('/' + post.location, (req, res, next) => {
+    //         res.render(post.location + '/view', {
+    //             post: post
+    //         })
+    //     })
+    // })
+
+    // movie reviews
+    // other stuff
+});
+
+
 router.get('/', (req, res, next) => {
     res.render('index', {
         homeSelected: 'selected',
+        posts: posts
     });
 });
 

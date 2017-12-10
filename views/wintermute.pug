@@ -1,14 +1,8 @@
 extends post
+include zeevo
+
 block meta
-    include avatar
-    | 
-    |     By  
-    a(href="/") zeevo
-    br
-    |
-    |    On Thursday, October 12 2017
-
-
+    +zeevo('Thursday, October 12 2017')
 
 block article
     .md-chips

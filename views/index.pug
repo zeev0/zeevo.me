@@ -8,11 +8,16 @@ block content
                     h1 zeevo.me
                     .tagline Shane
             article
-                //- .post-entry
-                //-     .post-detail
-                //-         h2
-                //-             a(href='posts/pip-tools-10-released/index.html') pip-tools 1.0 released
-                //-             span.post-date Jul 21, 2015
-                //-         .post-summary pip-tools 1.0 released
-                //- h2.readmore
-                //-     a(href='posts') Read more posts »
+                - var n = 0;
+                while n < 5 && n < posts.length
+                    - var post = posts[n];
+                    .post-entry
+                        .post-detail
+                            h2
+                                a(href=post.location) #{post.description}
+                                span.post-date #{post.displayDate}
+                            .post-summary #{post.summary}
+                    - n += 1
+                if posts && posts.length > 0
+                    h2.readmore
+                        a(href='posts') Read more posts »
