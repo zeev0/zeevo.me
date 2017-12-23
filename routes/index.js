@@ -24,17 +24,16 @@ var posts = []
 var postDir = __dirname + '/../views/posts'
 fs.readdirSync(postDir).forEach(file => {
     // blog
-    // let blogDir = postDir + '/blog'
-    // fs.readdirSync(blogDir).forEach(file => {
-    //     let post = require(blogDir + '/' + file + '/info.json')
-    //     console.log(post)
-    //     posts.push(post)
-    //     router.get('/' + post.location, (req, res, next) => {
-    //         res.render(post.location + '/view', {
-    //             post: post
-    //         })
-    //     })
-    // })
+    let blogDir = postDir + '/blog'
+    fs.readdirSync(blogDir).forEach(file => {
+        let post = require(blogDir + '/' + file + '/info.json')
+        posts.push(post)
+        router.get('/' + post.location, (req, res, next) => {
+            res.render(post.location + '/view', {
+                post: post
+            })
+        })
+    })
 
     // movie reviews
     // other stuff
@@ -57,6 +56,12 @@ router.get('/wintermute', (req, res, next) => {
 
 router.get('/about', (req, res, next) => {
     res.render('about');
+})
+
+router.get('/posts', (req, res, next) => {
+    res.render('posts', {
+        posts: posts
+    })
 })
 
 module.exports = router;
