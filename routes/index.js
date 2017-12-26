@@ -24,19 +24,31 @@ var posts = []
 var postDir = __dirname + '/../views/posts'
 fs.readdirSync(postDir).forEach(file => {
     // blog
-    let blogDir = postDir + '/blog'
-    fs.readdirSync(blogDir).forEach(file => {
-        let post = require(blogDir + '/' + file + '/info.json')
-        posts.push(post)
-        router.get('/' + post.location, (req, res, next) => {
-            res.render(post.location + '/view', {
-                post: post
+    try {
+        let dir = postDir + '/blog'
+        fs.readdirSync(dir).forEach(file => {
+            let post = require(dir + '/' + file + '/info.json')
+            posts.push(post)
+            router.get('/' + post.location, (req, res, next) => {
+                res.render(post.location + '/view', {
+                    post: post
+                })
             })
         })
-    })
+    } catch (e) {}
 
-    // movie reviews
-    // other stuff
+    try {
+        let dir = postDir + '/movies'
+        fs.readdirSync(moviesDir).forEach(file => {
+            let post = require(moviesDir + '/' + file + '/info.json')
+            posts.push(post)
+            router.get('/' + post.location, (req, res, next) => {
+                res.render(post.location + '/view', {
+                    post: post
+                })
+            })
+        })
+    } catch (e) {}
 });
 
 
@@ -79,8 +91,6 @@ postmap = {}
 postmap_proper.forEach((v, k) => {
     postmap[k] = v
 });
-
-console.log(postmap)
 
 router.get('/posts', (req, res, next) => {
     res.render('posts', {
