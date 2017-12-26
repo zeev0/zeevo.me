@@ -58,9 +58,34 @@ router.get('/about', (req, res, next) => {
     res.render('about');
 })
 
+var postmap_proper = new Map();
+var years = posts.map(x => x.date.slice(-2));
+years = years.filter((ele, pos) => {
+    return years.indexOf(ele) == pos;
+});
+years.sort().reverse();
+years.forEach(x => {
+    postmap_proper.set(x, []);
+});
+posts.forEach(x => {
+    var yr = x.date.slice(-2);
+    postmap_proper.get(yr).push(x);
+});
+postmap_proper.forEach((val, key) => {
+    val.sort().reverse();
+});
+
+postmap = {}
+postmap_proper.forEach((v, k) => {
+    postmap[k] = v
+});
+
+console.log(postmap)
+
 router.get('/posts', (req, res, next) => {
     res.render('posts', {
-        posts: posts
+        postmap: postmap,
+        years: years
     })
 })
 

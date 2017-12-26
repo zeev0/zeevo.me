@@ -1,0 +1,21 @@
+extends header
+block content
+    .site-container
+        .site-header
+            include navbar
+            header
+                h1 Archive
+                .tagline
+                    | All writings.
+        article
+            each yr in years
+                h1.year #{'20' + yr}
+                - var psts = postmap[yr]
+                each pst in psts
+                    div
+                        .post-entry
+                            h2
+                                a(href='/' + pst.location) #{pst.title} 
+                                span.post-date #{pst.displayDate}
+                            .post-detail
+                                .post-summary #{pst.description}
