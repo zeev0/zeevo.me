@@ -4,12 +4,14 @@ block content
         .site-header
             include navbar
             header
-                h1 Archive
+                h1= title
                 .tagline
                     | All writings.
         article
+            if !years || years.length == 0
+                p(style="font-style:italic") Theres nothing here... 
             each yr in years
-                h1.year #{'20' + yr}
+                h1.year= '20' + yr
                 - var psts = postmap[yr]
                 each pst in psts
                     div

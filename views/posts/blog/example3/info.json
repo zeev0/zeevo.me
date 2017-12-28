@@ -4,6 +4,7 @@
     "location": "posts/blog/example3",
     "description": "Test Description",
     "date": "12/2/18",
-    "displayDate": "Saturdau, December 2 2018",
-    "summary": "test summary"
+    "displayDate": "December 2, 2018",
+    "summary": "test summary",
+    "category": "blog"
 }

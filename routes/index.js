@@ -84,7 +84,9 @@ posts.forEach(x => {
     postmap_proper.get(yr).push(x);
 });
 postmap_proper.forEach((val, key) => {
-    val.sort().reverse();
+    val.sort((a, b) => {
+        return new Date(b.date) - new Date(a.date);
+    })
 });
 
 postmap = {}
@@ -95,7 +97,8 @@ postmap_proper.forEach((v, k) => {
 router.get('/posts', (req, res, next) => {
     res.render('posts', {
         postmap: postmap,
-        years: years
+        years: years,
+        title: "Archive"
     })
 })
 
