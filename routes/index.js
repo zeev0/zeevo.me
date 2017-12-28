@@ -89,17 +89,24 @@ postmap_proper.forEach((val, key) => {
     })
 });
 
-postmap = {}
+postmap = {};
 postmap_proper.forEach((v, k) => {
-    postmap[k] = v
+    postmap[k] = v;
 });
 
 router.get('/posts', (req, res, next) => {
     res.render('posts', {
         postmap: postmap,
-        years: years,
         title: "Archive"
     })
+})
+
+router.get('/blog', (req, res, next) => {
+    blogmap = {};
+    res.render('posts'), {
+        blogmap: null,
+        title: "Blog"
+    }
 })
 
 module.exports = router;

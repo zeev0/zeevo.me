@@ -8,6 +8,7 @@ block content
                 .tagline
                     | All writings.
         article
+            - var years = Object.keys(postmap).sort().reverse()
             if !years || years.length == 0
                 p(style="font-style:italic") Theres nothing here... 
             each yr in years
