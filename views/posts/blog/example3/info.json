@@ -1,7 +1,7 @@
 {
     "title": "Example Blog Post",
     "author": "zeevo",
-    "location": "posts/blog/example3",
+    "location": "example3",
     "description": "Test Description",
     "date": "12/2/18",
     "displayDate": "December 2, 2018",

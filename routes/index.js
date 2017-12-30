@@ -22,28 +22,18 @@ setInterval(getGuilds, interval);
 
 var posts = []
 var postDir = __dirname + '/../views/posts'
-fs.readdirSync(postDir).forEach(file => {
-    // blog
+fs.readdirSync(postDir).forEach(parent => {
     try {
-        let dir = postDir + '/blog'
+        let dir = postDir + '/' + parent
         fs.readdirSync(dir).forEach(file => {
-            let post = require(dir + '/' + file + '/info.json')
-            posts.push(post)
-            router.get('/' + post.location, (req, res, next) => {
-                res.render(post.location + '/view', {
-                    post: post
-                })
-            })
-        })
-    } catch (e) {}
-
-    try {
-        let dir = postDir + '/movies'
-        fs.readdirSync(moviesDir).forEach(file => {
-            let post = require(moviesDir + '/' + file + '/info.json')
-            posts.push(post)
-            router.get('/' + post.location, (req, res, next) => {
-                res.render(post.location + '/view', {
+            let post = require(dir + '/' + file + '/info.json');
+            posts.push(post);
+            let route = '/posts/' + parent;
+            console.log(route + '/' + post.location);
+            let template = route + '/' + file + '/view';
+            template = template.splice(1);
+            router.get(route + '/' + post.location, (req, res, next) => {
+                res.render(template, {
                     post: post
                 })
             })
@@ -94,19 +84,33 @@ postmap_proper.forEach((v, k) => {
     postmap[k] = v;
 });
 
+function post_page(topic) {
+    router.get('/posts/' + topic, (req, res, next) => {
+        let map = {};
+        postmap_proper.forEach((val, key) => {
+            lst = val.filter(x => {
+                return x.category === topic;
+            })
+            if (lst.length) {
+                map[key] = lst;
+            }
+        })
+        res.render('posts', {
+            postmap: map,
+            title: topic.charAt(0).toUpperCase() + topic.slice(1)
+        })
+    })
+}
+
+post_page('blog');
+post_page('films');
+post_page('other')
+
 router.get('/posts', (req, res, next) => {
     res.render('posts', {
         postmap: postmap,
         title: "Archive"
     })
-})
-
-router.get('/blog', (req, res, next) => {
-    blogmap = {};
-    res.render('posts'), {
-        blogmap: null,
-        title: "Blog"
-    }
 })
 
 module.exports = router;

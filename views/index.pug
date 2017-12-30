@@ -14,7 +14,7 @@ block content
                     .post-entry
                         .post-detail
                             h2
-                                a(href=post.location) #{post.description}
+                                a(href='/posts/' + post.category + '/' + post.location) #{post.description}
                                 span.post-date #{post.displayDate}
                             .post-summary #{post.summary}
                     - n += 1

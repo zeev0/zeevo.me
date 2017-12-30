@@ -1,10 +1,10 @@
 {
-    "title": "Example Blog Post",
+    "title": "Wintermute",
     "author": "zeevo",
-    "location": "example",
+    "location": "wintermute",
     "description": "Test Description",
     "date": "01/02/18",
     "displayDate": "January 2, 2018",
     "summary": "test summary",
-    "category": "blog"
+    "category": "other"
 }

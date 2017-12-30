@@ -4,7 +4,7 @@ block content
         .site-header
             include navbar
             header
-                h1= title
+                h1 #{title}
                 .tagline
                     | All writings.
         article
@@ -18,7 +18,7 @@ block content
                     div
                         .post-entry
                             h2
-                                a(href='/' + pst.location) #{pst.title} 
+                                a(href='/posts/' + pst.category + '/' + pst.location) #{pst.title} 
                                 span.post-date #{pst.displayDate}
                             .post-detail
                                 .post-summary #{pst.description}
