@@ -1,10 +1,9 @@
 {
-    "title": "Example Blog Post",
+    "title": "A follow up",
     "author": "zeevo",
     "location": "example3",
     "description": "Test Description",
     "date": "12/2/18",
-    "displayDate": "December 2, 2018",
     "summary": "test summary",
     "category": "blog"
 }

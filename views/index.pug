@@ -11,11 +11,12 @@ block content
                 - var n = 0;
                 while n < 5 && n < posts.length
                     - var post = posts[n];
+                    - var date = moment(post.date).format('MMMM Do, YYYY');
                     .post-entry
                         .post-detail
                             h2
                                 a(href='/posts/' + post.category + '/' + post.location) #{post.description}
-                                span.post-date #{post.displayDate}
+                                span.post-date #{post.category} | #{date}
                             .post-summary #{post.summary}
                     - n += 1
                 if posts && posts.length > 0
