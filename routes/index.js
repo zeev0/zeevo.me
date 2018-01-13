@@ -44,7 +44,6 @@ Object.keys(posts.posts).forEach(key => {
   flatposts = flatposts.concat(posts.posts[key])
 });
 flatposts = flatposts.reverse();
-console.log(flatposts)
 
 router.get('/', (req, res, next) => {
   res.render('index', {

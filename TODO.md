@@ -6,3 +6,6 @@
 
 # Layout
 - [ ] Put nav bar on the sidebar
+
+# Bugs
+- [X] Links on homepage for wintermute don't work
