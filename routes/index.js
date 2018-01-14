@@ -40,10 +40,10 @@ var interval = minutes * 60 * 1000;
 setInterval(getGuilds, interval);
 
 var flatposts = [];
-Object.keys(posts.posts).forEach(key => {
-  flatposts = flatposts.concat(posts.posts[key])
+Object.keys(posts.all).forEach(key => {
+  flatposts = flatposts.concat(posts.all[key])
 });
-flatposts = flatposts.reverse();
+flatposts = flatposts.reverse().slice(0, 5); // display a maximum of 5 posts on homepage
 
 router.get('/', (req, res, next) => {
   res.render('index', {
@@ -64,7 +64,7 @@ router.get('/about', (req, res, next) => {
 
 router.get('/posts', (req, res, next) => {
   res.render('posts', {
-    postmap: posts.posts,
+    postmap: posts.all,
     title: "Archive"
   })
 })

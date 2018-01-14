@@ -39,13 +39,13 @@ class PostService {
         return new Date(b.date) - new Date(a.date);
       });
     });
-    this.posts = postmap
+    this.all = postmap
   }
 
   _filterfor(category) {
     var result = {};
-    Object.keys(this.posts).forEach(key => {
-      var yr = this.posts[key];
+    Object.keys(this.all).forEach(key => {
+      var yr = this.all[key];
       var entry = yr.filter(val => val.category === category)
       if (entry.length) {
         result[key] = entry
