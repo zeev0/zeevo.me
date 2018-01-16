@@ -1,7 +1,7 @@
 h1,
 h2 {
   font-family: RobotoDraft, "Helvetica Neue", "Helvetica Neue", Arial, sans-serif;
-  margin-top: 40px
+  margin-top: 20px
 }
 
 body,
@@ -438,7 +438,7 @@ footer p {
 body.archive article .post-entry,
 body.home article .post-entry {
   clear: both;
-  margin-top: 40px
+  margin-bottom: 40px
 }
 
 body.archive article .post-entry:first-of-type,
@@ -452,19 +452,6 @@ body.home article .post-date {
   font-size: 12px;
   line-height: 20px;
   color: #858585
-}
-
-@media screen and (min-width:768px) {
-  footer {
-    padding: 0 20px 60px
-  }
-  body.archive article .post-date,
-  body.home article .post-date {
-    display: inline;
-    margin-left: 10px;
-    font-size: 14px;
-    line-height: 22px
-  }
 }
 
 body.archive article .post-detail,

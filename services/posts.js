@@ -20,38 +20,18 @@ class PostService {
         posts.push(post);
       })
     });
-    var postmap = {};
-    var years = posts.map(x => x.date.slice(-2));
-    years = years.filter((ele, pos) => {
-      return years.indexOf(ele) == pos;
-    });
-    years.sort().reverse();
-    years.forEach(x => {
-      postmap[x] = [];
-    });
-    posts.forEach(x => {
-      var yr = x.date.slice(-2);
-      postmap[yr].push(x);
-    });
+    posts.sort((a, b) => {
+      return new Date(a.date) - new Date(b.date);
+    })
+    this.all = posts
+  }
 
-    Object.keys(postmap).forEach(key => {
-      postmap[key].sort((a, b) => {
-        return new Date(b.date) - new Date(a.date);
-      });
-    });
-    this.all = postmap
+  getByAuthor(author) {
+    return this.all.filter(val => val.author === category);
   }
 
   _filterfor(category) {
-    var result = {};
-    Object.keys(this.all).forEach(key => {
-      var yr = this.all[key];
-      var entry = yr.filter(val => val.category === category)
-      if (entry.length) {
-        result[key] = entry
-      }
-    });
-    return result;
+    return this.all.filter(val => val.category === category);
   }
 
 }

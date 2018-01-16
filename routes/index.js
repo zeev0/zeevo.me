@@ -10,15 +10,12 @@ var posts = require('../services/posts');
 var guilds = 0;
 
 function createRoutes(map, topic) {
-  Object.keys(map).forEach(k => {
-    var val = map[k];
-    val.forEach(info => {
-      var route = '/' + topic + '/' + info.location;
-      router.get('/' + topic + '/' + info.location, (req, res, next) => {
-        res.render('posts/' + route + '/view', {
-          post: info,
-          title: topic.charAt(0).toUpperCase() + topic.slice(1)
-        })
+  posts.all.forEach(post => {
+    var route = '/' + topic + '/' + post.location;
+    router.get(route, (req, res, next) => {
+      res.render('posts/' + route + '/view', {
+        post: post,
+        title: topic.charAt(0).toUpperCase() + topic.slice(1)
       })
     })
   })
@@ -39,11 +36,7 @@ var minutes = 30;
 var interval = minutes * 60 * 1000;
 setInterval(getGuilds, interval);
 
-var flatposts = [];
-Object.keys(posts.all).forEach(key => {
-  flatposts = flatposts.concat(posts.all[key])
-});
-flatposts = flatposts.reverse().slice(0, 5); // display a maximum of 5 posts on homepage
+var flatposts = posts.all.reverse().slice(0, 5); // display a maximum of 5 posts on homepage
 
 router.get('/', (req, res, next) => {
   res.render('index', {
@@ -64,28 +57,28 @@ router.get('/about', (req, res, next) => {
 
 router.get('/posts', (req, res, next) => {
   res.render('posts', {
-    postmap: posts.all,
+    posts: posts.all,
     title: "Archive"
   })
 })
 
 router.get('/films', (req, res, next) => {
   res.render('posts', {
-    postmap: posts.films,
+    posts: posts.films,
     title: "Films"
   })
 })
 
 router.get('/blog', (req, res, next) => {
   res.render('posts', {
-    postmap: posts.blog,
+    posts: posts.blog,
     title: "Blog"
   })
 })
 
 router.get('/other', (req, res, next) => {
   res.render('posts', {
-    postmap: posts.other,
+    posts: posts.other,
     title: "Other"
   })
 })

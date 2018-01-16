@@ -8,17 +8,18 @@ block content
                     h1 zeevo.me
                     .tagline Shane
             article
-                - var n = 0;
-                while n < posts.length
-                    - var post = posts[n];
-                    - var date = moment(post.date).format('MMMM Do, YYYY');
-                    .post-entry
-                        .post-detail
-                            h2
-                                a(href='/' + post.category + '/' + post.location) #{post.description}
-                                span.post-date #{post.category} | #{date}
-                            .post-summary #{post.summary}
-                    - n += 1
-                if posts && posts.length > 0
-                    h2.readmore
-                        a(href='posts') Read more posts »
+              if !posts.length
+                p(style="font-style:italic") Theres nothing here... 
+              each pst in posts
+                - var date = moment(pst.date).format('MMMM Do, YYYY');
+                div
+                  .post-entry
+                      h2
+                        a(href='/' + pst.category + '/' + pst.location) #{pst.title}
+                        br
+                        span.post-date #{date}
+                      .post-detail
+                          .post-summary #{pst.description}
+              if posts && posts.length > 0
+                  h2.readmore
+                      a(href='posts') Read more posts »

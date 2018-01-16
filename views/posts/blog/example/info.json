@@ -1,9 +1,9 @@
 {
-    "title": "My first blog post of 2018",
-    "author": "zeevo",
-    "location": "example",
-    "description": "Test Description",
-    "date": "01/02/18",
-    "summary": "test summary",
-    "category": "blog"
+  "title": "My first blog post of 2018",
+  "author": "zeevo",
+  "location": "example",
+  "description": "Test Description",
+  "date": "01/02/2018",
+  "summary": "test summary",
+  "category": "blog"
 }

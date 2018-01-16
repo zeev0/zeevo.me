@@ -8,17 +8,15 @@ block content
                 .tagline
                     | All writings.
         article
-            - var years = Object.keys(postmap).sort().reverse()
-            if !years || years.length == 0
-                p(style="font-style:italic") Theres nothing here... 
-            each yr in years
-                h1.year= '20' + yr
-                - var psts = postmap[yr]
-                each pst in psts
-                    div
-                        .post-entry
-                            h2
-                                a(href='/' + pst.category + '/' + pst.location) #{pst.title} 
-                                span.post-date #{pst.displayDate}
-                            .post-detail
-                                .post-summary #{pst.description}
+          if !posts.length
+            p(style="font-style:italic") Theres nothing here... 
+          each pst in posts
+            - var date = moment(pst.date).format('MMMM Do, YYYY');
+            div
+              .post-entry
+                  h2
+                    a(href='/' + pst.category + '/' + pst.location) #{pst.title}
+                    br
+                    span.post-date #{date}
+                  .post-detail
+                      .post-summary #{pst.description}

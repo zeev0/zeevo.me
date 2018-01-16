@@ -1,9 +1,9 @@
 {
-    "title": "My last blog post of 2017",
-    "author": "zeevo",
-    "location": "example2",
-    "description": "Test Description",
-    "date": "1/2/17",
-    "summary": "test summary",
-    "category": "blog"
+  "title": "My last blog post of 2017",
+  "author": "zeevo",
+  "location": "example2",
+  "description": "Test Description",
+  "date": "1/2/2017",
+  "summary": "test summary",
+  "category": "blog"
 }
