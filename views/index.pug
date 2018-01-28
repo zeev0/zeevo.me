@@ -16,7 +16,7 @@ block content
                   .post-entry
                       h2
                         a(href='/' + pst.category + '/' + pst.location) #{pst.title}
-                        br
+                        span.post-date #{pst.category.charAt(0).toUpperCase() + pst.category.slice(1)}
                         span.post-date #{date}
                       .post-detail
                           .post-summary #{pst.description}
