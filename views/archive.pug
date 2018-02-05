@@ -1,0 +1,22 @@
+extends header
+block content
+    .site-container
+        .site-header
+            include navbar
+            header
+                h1 #{title}
+                .tagline
+                    | All writings.
+        article
+          if !posts.length
+            p(style="font-style:italic") Theres nothing here... 
+          if posts.length
+            table(style='width: 100%', cellpading='4')
+              tbody
+                each pst in posts
+                  - var date = moment(pst.date).format('MMMM Do, YYYY');
+                  tr
+                    td 
+                      a(href='/' + pst.category + '/' + pst.location) #{pst.title} 
+                    td=pst.category
+                    td=date

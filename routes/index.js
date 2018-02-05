@@ -7,7 +7,6 @@ var request = require('request');
 var moment = require('moment');
 var posts = require('../services/posts');
 
-var guilds = 0;
 
 function createRoutes(map, topic) {
   posts.all.forEach(post => {
@@ -22,16 +21,18 @@ function createRoutes(map, topic) {
 }
 
 function getGuilds() {
-  request('http://amas.us.to:8888/wintermute', (err, res, body) => {
-    if (err) {
-      console.log(err);
-      return;
-    }
-    guilds = JSON.parse(body).guilds;
-  })
+  return 72;
+  // request('http://amas.us.to:8888/wintermute', (err, res, body) => {
+  //   if (err) {
+  //     console.log(err);
+  //     return;
+  //   }
+  //   return JSON.parse(body).guilds;
+  // })
 }
 
-getGuilds();
+var guilds = getGuilds();
+
 var minutes = 30;
 var interval = minutes * 60 * 1000;
 setInterval(getGuilds, interval);
@@ -56,7 +57,7 @@ router.get('/about', (req, res, next) => {
 
 
 router.get('/posts', (req, res, next) => {
-  res.render('posts', {
+  res.render('archive', {
     posts: posts.all,
     title: "Archive"
   })
