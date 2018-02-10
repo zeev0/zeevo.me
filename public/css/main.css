@@ -557,7 +557,7 @@ body.post article .meta img {
   padding: 1em;
   font-size: .8rem;
   line-height: 1.2rem;
-  border: 0!important
+  border: 0 !important
 }
 
 #carbonads-container #carbonads span {
@@ -569,7 +569,7 @@ body.post article .meta img {
   display: block;
   margin-bottom: 1em;
   text-align: left;
-  color: #333!important
+  color: #333 !important
 }
 
 #carbonads-container .carbon-img {
@@ -582,7 +582,7 @@ body.post article .meta img {
   display: block;
   text-align: right;
   font-size: .8em;
-  color: #4d4d4d!important
+  color: #4d4d4d !important
 }
 
 .hll {
@@ -740,4 +740,8 @@ body.post article .meta img {
 
 .il {
   color: #099
+}
+
+.theading {
+  cursor: pointer
 }

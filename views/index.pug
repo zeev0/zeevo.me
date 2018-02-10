@@ -5,8 +5,10 @@ block content
             .site-header
                 include navbar
                 header
-                    h1 zeevo.me
-                    .tagline Shane
+                  div
+                    h1(style="display: inline-block; margin-right: 10px; margin-bottom: 5px") zeevo.me
+                    .tagline(style="display: inline-block") Shane 
+                  i(style="margin-top: 10px") I am a programmer for a huge corporation.
             article
               if !posts.length
                 p(style="font-style:italic") Theres nothing here... 
