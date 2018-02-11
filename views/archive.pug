@@ -16,7 +16,8 @@ block content
               col(align='left')
               thead
                 tr
-                  th(style='text-align:left') Title
+                  th(style='text-align:left') 
+                    a(class='sort theading', date-sort='title') Title
                   th 
                     a(class='sort theading', data-sort='category') Category
                   th 
@@ -28,7 +29,7 @@ block content
                   - var date = moment(pst.date)
                   - var formattedDate = date.format('MMMM Do, YYYY');
                   tr
-                    td(class='title', style='text-align:left', post-title=pst.title) 
+                    td(class='title', style='text-align:left', data-title=pst.title) 
                       a(href='/' + pst.category + '/' + pst.location) #{pst.title} 
                     td(class='category')=pst.category
                     td(class='author')=pst.author
@@ -39,9 +40,9 @@ block content
       var postList = new List('posts', {
         valueNames: [
           {
-            name: 'title',
-            attr: 'post-title'
-          }, 
+            name: 'title'
+            data:['title']
+          }
           'category', 
           'author', 
           {

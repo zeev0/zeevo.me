@@ -2,7 +2,8 @@
 var fs = require('fs');
 
 function devMode() {
-  return process.NODE_ENV === undefined || process.env.NODE_ENV.toLowerCase().startsWith('dev')
+  return process.env.NODE_ENV !== undefined &&
+    process.env.NODE_ENV.toLowerCase().startsWith('dev');
 }
 
 class PostService {
@@ -13,7 +14,6 @@ class PostService {
     this.films = this._filterfor('films');
     this.other = this._filterfor('other');
     if (!devMode()) {
-      console.log('Running in development mode');
       this._removeExamples();
     }
   }
@@ -44,7 +44,6 @@ class PostService {
 
   _removeExamples() {
     this.all = this.all.filter(val => !val.location.toLowerCase().startsWith('example'))
-    console.log('here')
     this.blog = this._filterfor('blog');
     this.films = this._filterfor('films');
     this.other = this._filterfor('other');
