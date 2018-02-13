@@ -743,7 +743,12 @@ body.post article .meta img {
 }
 
 .theading {
-  cursor: pointer
+  cursor: pointer;
+  font-weight: normal
+}
+
+.theading:hover {
+  color: #333
 }
 
 .fcenter {
