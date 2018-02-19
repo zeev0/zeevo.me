@@ -5,7 +5,7 @@ block header
 block meta
     +avatar(post.displayDate)
 block article
-  table(style='width: 100%', cellpadding=4)
+  table(style='width: 100%', cellpadding=4, id='agile-xpost')
     tbody
       tr
         td Jira Jockey
@@ -69,3 +69,10 @@ block article
         td 
         td 
         td 
+  script.
+    var colors = ["#FF5353", "#DD597D", "#CA00CA", "#A41CC6", "#7373FF", "#29AFD6", "#74BAAC"];
+    $("#agile-xpost td").each(function() {
+      var random_color = colors[Math.floor(Math.random() * colors.length)];
+      $(this).css('color', random_color)
+      $(this).css('font-weight', 'bold')
+    });
