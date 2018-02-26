@@ -48,4 +48,10 @@ app.use(function (err, req, res, next) {
   res.render('error');
 });
 
+app._router.stack.forEach(function (r) {
+  if (r.route && r.route.path) {
+    console.log(r.route.path)
+  }
+})
+
 module.exports = app;

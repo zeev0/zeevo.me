@@ -744,7 +744,8 @@ body.post article .meta img {
 
 .theading {
   cursor: pointer;
-  font-weight: normal
+  font-weight: normal;
+  color: #8a8a8a
 }
 
 .theading:hover {

@@ -10,7 +10,7 @@ var posts = require('../services/posts');
 
 function createRoutes(map, topic) {
   posts.all.forEach(post => {
-    var route = '/' + topic + '/' + post.location;
+    var route = '/' + (posts.indexOf(post) + 1) + '/' + post.location;
     router.get(route, (req, res, next) => {
       res.render('posts/' + route + '/view', {
         post: post,
@@ -37,7 +37,7 @@ var minutes = 30;
 var interval = minutes * 60 * 1000;
 setInterval(getGuilds, interval);
 
-var flatposts = posts.all.reverse().slice(0, 5); // display a maximum of 5 posts on homepage
+// var flatposts = posts.all.reverse().slice(0, 5); // display a maximum of 5 posts on homepage
 
 router.get('/', (req, res, next) => {
   res.render('index', {
@@ -55,7 +55,6 @@ router.get('/about', (req, res, next) => {
   res.render('about');
 })
 
-
 router.get('/posts', (req, res, next) => {
   res.render('archive', {
     posts: posts.all,
@@ -63,29 +62,14 @@ router.get('/posts', (req, res, next) => {
   })
 })
 
-router.get('/films', (req, res, next) => {
-  res.render('posts', {
-    posts: posts.films,
-    title: "Films"
+posts.all.forEach(post => {
+  var route = '/posts/' + post.number;
+  console.log(route)
+  router.get(route, (req, res, next) => {
+    res.render('posts/' + post.number, {
+      post: post,
+    })
   })
 })
-
-router.get('/blog', (req, res, next) => {
-  res.render('posts', {
-    posts: posts.blog,
-    title: "Blog"
-  })
-})
-
-router.get('/other', (req, res, next) => {
-  res.render('posts', {
-    posts: posts.other,
-    title: "Other"
-  })
-})
-
-createRoutes(posts.other, 'other');
-createRoutes(posts.films, 'films');
-createRoutes(posts.blog, 'blog');
 
 module.exports = router;
