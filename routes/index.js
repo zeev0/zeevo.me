@@ -8,9 +8,11 @@ var moment = require('moment');
 var posts = require('../services/posts');
 
 
+
 function createRoutes(map, topic) {
   posts.all.forEach(post => {
     var route = '/' + (posts.indexOf(post) + 1) + '/' + post.location;
+    console.log(route)
     router.get(route, (req, res, next) => {
       res.render('posts/' + route + '/view', {
         post: post,
@@ -40,9 +42,7 @@ setInterval(getGuilds, interval);
 // var flatposts = posts.all.reverse().slice(0, 5); // display a maximum of 5 posts on homepage
 
 router.get('/', (req, res, next) => {
-  res.render('index', {
-    posts: flatposts
-  });
+  res.render('index', {});
 });
 
 router.get('/wintermute', (req, res, next) => {
