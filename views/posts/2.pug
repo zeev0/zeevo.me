@@ -5,7 +5,6 @@ block header
     h1 pip-tools
     .tagline The future
 block meta
-    - var date = moment(post.date).format('MMMM Do, YYYY');
-    +avatar(date)
+    +avatar(post.displayDate)
 block article
     p Example paragraph

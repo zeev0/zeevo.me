@@ -23,9 +23,9 @@ class PostService {
 
   constructor() {
     this._initializePosts();
-    if (!devMode()) {
-      this._removeExamples();
-    }
+    // if (!devMode()) {
+    //   this._removeExamples();
+    // }
   }
 
   _initializePosts() {
@@ -43,9 +43,8 @@ class PostService {
       }
     })
     this.all = posts;
+    this.posts = posts;
   }
-
-
 
   getByAuthor(author) {
     return this.all.filter(val => val.author === category);
