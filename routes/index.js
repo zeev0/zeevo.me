@@ -7,8 +7,6 @@ var request = require('request');
 var moment = require('moment');
 var posts = require('../services/posts');
 
-
-
 function createRoutes(map, topic) {
   posts.all.forEach(post => {
     var route = '/' + (posts.indexOf(post) + 1) + '/' + post.location;

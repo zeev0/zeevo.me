@@ -278,7 +278,7 @@ body.draft:before {
   margin: 10px 0 0
 }
 
-.site-header nav ul {
+.site-header nav table td ul {
   margin: 0;
   text-align: center
 }
@@ -764,6 +764,15 @@ body.post article .meta img {
 
 body {
   margin-top: 20px;
-  background-color: grey;
+  /* background-color: grey; */
+  background-image: url("/img/bw5.jpg")
   /* replace with cool repeated image */
+}
+
+.fa {
+  color: rgba(51, 51, 51, .7)
+}
+
+nav ul li:first-child {
+  float: left
 }

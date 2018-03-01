@@ -43,7 +43,6 @@ class PostService {
       }
     })
     this.all = posts;
-    this.posts = posts;
   }
 
   getByAuthor(author) {
