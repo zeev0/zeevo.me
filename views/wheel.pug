@@ -2,8 +2,8 @@ mixin wheel(prev, cur, next)
   .wheel.table
     ul(style="display:inline")
       li
-        button='<'
+        a.button(href='/posts/' + cur) <
       li
-        button='random'
+        a.button='random'
       li
-        button='>'
+        a.button(href='/posts/' + next) >

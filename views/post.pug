@@ -1,11 +1,22 @@
 extends header
 block content
-    .site-header
-        include navbar
-        header
-            block header
-    article
-        .meta
-            block meta
-        .post
-            block article
+    body.home
+        .site-container(style="position: relative")
+            .site-header
+                include navbar
+                header
+                    block header
+            article
+              .meta
+                  block meta
+              .post
+                  block article
+            .wheel.table
+              ul(style="display:inline")
+                li
+                  a.button(href='/posts/' + cur) <
+                li
+                  a.button='random'
+                li
+                  a.button(href='/posts/' + next) >
+

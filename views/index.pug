@@ -1,9 +1,19 @@
 extends header
-include wheel
 block content
     body.home
         .site-container(style="position: relative")
             .site-header
                 include navbar
             article
-            +wheel(1,2,3)
+              .meta
+                  block meta
+              .post
+                  block article
+            .wheel.table
+              ul(style="display:inline")
+                li
+                  a.button(href='/posts/' + cur) <
+                li
+                  a.button='random'
+                li
+                  a.button(href='/posts/' + next) >
