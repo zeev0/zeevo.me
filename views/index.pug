@@ -1,7 +1,9 @@
 extends header
+include wheel
 block content
     body.home
-        .site-container
+        .site-container(style="position: relative")
             .site-header
                 include navbar
             article
+            +wheel(1,2,3)
