@@ -33,15 +33,19 @@ class PostService {
     var postDir = __dirname + '/../views/posts';
     var promises = [];
     fs.readdirSync(postDir).forEach(view => {
-      let post = postDir + '/' + view
+      let post = postDir + '/' + view;
       var data = fs.readFileSync(post);
       var firstline = data.toString().split('\n')[0];
       var p = validateAndParse(firstline);
-      p.number = view.split('.')[0]
+      p.view = postDir + '/' + view.slice(0, -4);
+      p.number = view.split('.')[0];
       if (p !== null) {
-        posts.push(p)
+        posts.push(p);
       }
     })
+    posts.sort((a, b) => {
+      return a.number - b.number;
+    });
     this.all = posts;
   }
 

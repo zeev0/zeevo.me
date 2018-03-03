@@ -13,8 +13,9 @@ block content
                   block article
             .wheel.table
               ul(style="display:inline")
+                //- visibility: hidden to hide elements but keep width if prev, next is null
                 li
-                  a.button(href='/posts/' + cur) <
+                  a.button(href='/posts/' + prev) <
                 li
                   a.button='random'
                 li
