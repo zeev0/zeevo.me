@@ -264,7 +264,7 @@ body.draft:before {
 }
 
 .outersc {
-  border: 4px solid black
+  border: 3px solid black
 }
 
 @media screen and (min-width:1178px) {

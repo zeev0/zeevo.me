@@ -10,7 +10,6 @@ var posts = require('../services/posts');
 function createRoutes(map, topic) {
   posts.all.forEach(post => {
     var route = '/' + (posts.indexOf(post) + 1) + '/' + post.location;
-    console.log(route)
     router.get(route, (req, res, next) => {
       res.render('posts/' + route + '/view', {
         post: post,
@@ -40,13 +39,14 @@ setInterval(getGuilds, interval);
 // var flatposts = posts.all.reverse().slice(0, 5); // display a maximum of 5 posts on homepage
 
 router.get('/', (req, res, next) => {
-  var len = posts.all.length
-  var latest = posts.all[len - 1]
+  var len = posts.all.length;
+  var latest = posts.all[len - 1];
   res.render(latest.view, {
     post: latest,
     cur: latest.number,
-    prev: latest.number - 1,
-    next: null
+    prev: +latest.number - 1,
+    next: +latest.number + 1,
+    total: posts.all.length
   });
 });
 
@@ -69,10 +69,13 @@ router.get('/posts', (req, res, next) => {
 
 posts.all.forEach(post => {
   var route = '/posts/' + post.number;
-  console.log(route)
   router.get(route, (req, res, next) => {
     res.render('posts/' + post.number, {
       post: post,
+      cur: post.number,
+      prev: +post.number - 1,
+      next: +post.number + 1,
+      total: posts.all.length
     })
   })
 })

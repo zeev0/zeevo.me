@@ -1,0 +1,14 @@
+extends header
+block content
+    body.home
+        .site-container(style="position: relative")
+            .site-header
+                include navbar
+                header
+                    block header
+            article
+              .meta
+                  block meta
+              .post
+                  block article
+            block bottom
