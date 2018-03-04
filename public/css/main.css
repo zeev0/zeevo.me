@@ -260,7 +260,11 @@ body.draft:before {
   max-width: 912px;
   margin: 0;
   background-color: white;
-  border-radius: 10px
+  border-radius: 10px;
+}
+
+.outersc {
+  border: 4px solid black
 }
 
 @media screen and (min-width:1178px) {
@@ -765,7 +769,7 @@ body.post article .meta img {
 body {
   margin-top: 20px;
   /* background-color: grey; */
-  background-image: url("/img/bw5.jpg")
+  background-image: url("/img/fractal.png")
   /* replace with cool repeated image */
 }
 
