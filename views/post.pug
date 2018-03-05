@@ -6,13 +6,14 @@ block bottom
       - var prevhidden;
       - var nexthidden;
       - if (prev <= 0) prevhidden = 'visibility: hidden' 
-      - console.log(next);
-      - console.log(total);
       - if (next > total) nexthidden = 'visibility: hidden' 
       li
         a.button(href='/posts/' + prev, style=prevhidden) <
-      li
-        a.button='random'
+      //- li
+      //-   a.button='random'
       li
         a.button(href='/posts/' + next, style=nexthidden) >
+    - var outof = post.number + '/' + total;
+    div
+      i=outof
 

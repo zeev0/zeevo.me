@@ -768,9 +768,8 @@ body.post article .meta img {
 
 body {
   margin-top: 20px;
-  /* background-color: grey; */
-  background-image: url("/img/fractal.png")
-  /* replace with cool repeated image */
+  background-image: url("/img/fractal.png");
+  color: #333;
 }
 
 .fa {
