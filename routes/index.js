@@ -1,23 +1,11 @@
 'use strict';
 var router = require('express').Router();
-
 var fs = require('fs');
 var path = require('path');
 var request = require('request');
 var moment = require('moment');
 var posts = require('../services/posts');
-
-function createRoutes(map, topic) {
-  posts.all.forEach(post => {
-    var route = '/' + (posts.indexOf(post) + 1) + '/' + post.location;
-    router.get(route, (req, res, next) => {
-      res.render('posts/' + route + '/view', {
-        post: post,
-        title: topic.charAt(0).toUpperCase() + topic.slice(1)
-      })
-    })
-  })
-}
+var projects = require('../services/projects')
 
 function getGuilds() {
   return 72;
@@ -51,7 +39,7 @@ router.get('/', (req, res, next) => {
 });
 
 router.get('/wintermute', (req, res, next) => {
-  res.render('wintermute', {
+  res.render('projects/wintermute/view', {
     guilds: guilds
   });
 })
@@ -67,6 +55,13 @@ router.get('/posts', (req, res, next) => {
   })
 })
 
+router.get('/projects', (req, res, next) => {
+  res.render('posts', {
+    posts: projects.all,
+    title: "Projects"
+  })
+})
+
 posts.all.forEach(post => {
   var route = '/posts/' + post.number;
   router.get(route, (req, res, next) => {
@@ -76,6 +71,15 @@ posts.all.forEach(post => {
       prev: +post.number - 1,
       next: +post.number + 1,
       total: posts.all.length
+    })
+  })
+})
+
+projects.all.forEach(post => {
+  var route = 'projects/' + post.location;
+  router.get('/' + route, (req, res, next) => {
+    res.render(route + '/view', {
+      guilds: guilds
     })
   })
 })
