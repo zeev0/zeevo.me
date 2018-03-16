@@ -519,7 +519,7 @@ body.post article .post .post-info {
 }
 
 body.post article .meta {
-  display: none;
+  /* display: none; */
   color: #858585;
   font-size: 15px;
   line-height: 22px
