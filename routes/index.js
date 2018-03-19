@@ -6,6 +6,7 @@ var request = require('request');
 var moment = require('moment');
 var posts = require('../services/posts');
 var projects = require('../services/projects')
+var onlyUnique = require('../utils/utils').onlyUnique
 
 function getGuilds() {
   return 72;
@@ -75,6 +76,19 @@ posts.all.forEach(post => {
   })
 })
 
+posts.getAuthors()
+  .concat(projects.getAuthors())
+  .filter(onlyUnique)
+  .forEach(author => {
+    var entries = posts.getByAuthor(author)
+      .concat(projects.getByAuthor(author));
+    router.get('/authors/' + author, (req, res, next) => {
+      res.render('authors/zeevo', {
+        posts: entries
+      })
+    })
+  });
+
 projects.all.forEach(post => {
   var route = 'projects/' + post.location;
   router.get('/' + route, (req, res, next) => {
@@ -82,6 +96,11 @@ projects.all.forEach(post => {
       guilds: guilds
     })
   })
+})
+
+router.get('/posts/random', (req, res, next) => {
+  var random = posts.all[Math.floor(Math.random() * posts.all.length)]
+  res.redirect('/posts/' + random.number)
 })
 
 module.exports = router;

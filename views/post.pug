@@ -2,15 +2,14 @@ extends page
 block wheel
   .wheel.table
     ul(style="display:inline")
-      //- visibility: hidden to hide elements but keep width if prev, next is null
       - var prevhidden;
       - var nexthidden;
       - if (prev <= 0) prevhidden = 'visibility: hidden' 
       - if (next > total) nexthidden = 'visibility: hidden' 
       li
         a.button(href='/posts/' + prev, style=prevhidden) <
-      //- li
-      //-   a.button='random'
+      li
+        a.button(href='/posts/random') Random
       li
         a.button(href='/posts/' + next, style=nexthidden) >
     - var outof = post.number + '/' + total;

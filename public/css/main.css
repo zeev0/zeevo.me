@@ -135,11 +135,6 @@ a {
   text-decoration: none
 }
 
-a:link,
-a:visited {
-  color: rgba(51, 51, 51, .9)
-}
-
 a:hover {
   color: #008dff
 }
@@ -533,7 +528,7 @@ body.post article .meta {
   }
 }
 
-body.post article .meta img {
+body.post article .meta .avi {
   float: left;
   margin-right: 12px;
 }
@@ -793,6 +788,10 @@ nav ul li:first-child {
   margin: 0 auto;
   /* margin-left: -130px;
   width: 260px; */
+}
+
+.wheel a {
+  color: rgba(51, 51, 51, .9)
 }
 
 .wheel ul li {

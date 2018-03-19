@@ -1,11 +1,12 @@
 'use strict';
 var fs = require('fs');
 var firstline = require('firstline')
+var GenericService = require('./generic')
 
-
-class ProjectService {
+class ProjectService extends GenericService {
 
   constructor() {
+    super();
     this._initialize();
   }
 
@@ -20,10 +21,6 @@ class ProjectService {
       return new Date(a.date) - new Date(b.date);
     });
     this.all = posts;
-  }
-
-  getByAuthor(author) {
-    return this.all.filter(val => val.author === category);
   }
 
   _filterForTag(tag) {

@@ -1,6 +1,7 @@
 'use strict';
 var fs = require('fs');
 var firstline = require('firstline')
+var GenericService = require('./generic')
 
 function devMode() {
   return process.env.NODE_ENV !== undefined &&
@@ -19,13 +20,11 @@ function validateAndParse(line) {
   return info;
 }
 
-class PostService {
+class PostService extends GenericService {
 
   constructor() {
+    super();
     this._initializePosts();
-    // if (!devMode()) {
-    //   this._removeExamples();
-    // }
   }
 
   _initializePosts() {
@@ -47,10 +46,6 @@ class PostService {
       return a.number - b.number;
     });
     this.all = posts;
-  }
-
-  getByAuthor(author) {
-    return this.all.filter(val => val.author === category);
   }
 
   _filterForTag(tag) {
