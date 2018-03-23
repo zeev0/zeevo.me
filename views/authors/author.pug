@@ -1,37 +1,22 @@
 extends ../page
 include avis
-block meta
-  p
-    img(src='/img/robotcircle2.png', width=48)
 block article
-  h3 - --------- - Hi.
+  div
+    block description
   if !posts.length
     p(style="font-style:italic") Theres nothing here... 
   if posts.length
     div(id='posts')
       table(style='width: 100%; text-align: right', cellpading='4')
         col(align='left')
-        thead
-          tr
-            th(style='text-align:left') 
-              a(class='sort theading', date-sort='title') #
-            th
-              a(class='sort theading', date-sort='title') Title
-            th 
-              a(class='sort theading', data-sort='author') Author
-            th 
-              a(class='sort theading', data-sort='date') Date
         tbody(class='list')
           each pst in posts
             - var date = moment(pst.date)
             - var formattedDate = date.format('MMMM Do, YYYY');
             - var href = '/posts/' + pst.number
             tr
-              td(class='number', style='text-align:left')
-                a(href=href) #{pst.number} 
-              td(class='title', data-title=pst.title) 
+              td(class='title', style='text-align:left' data-title=pst.title) 
                 a(href=href) #{pst.title} 
-              td(class='author')=pst.author
               td(class='date', date-timestamp=date.format('X'), style="align:right") #{formattedDate}
   script(src='/js/list.min.js')
   script.
