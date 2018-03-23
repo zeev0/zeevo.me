@@ -17,8 +17,6 @@ block content
               thead
                 tr
                   th(style='text-align:left') 
-                    a(class='sort theading', date-sort='title') #
-                  th
                     a(class='sort theading', date-sort='title') Title
                   th 
                     a(class='sort theading', data-sort='author') Author
@@ -30,10 +28,8 @@ block content
                   - var formattedDate = date.format('MMMM Do, YYYY');
                   - var href = '/posts/' + pst.number
                   tr
-                    td(class='number', style='text-align:left')
-                      a(href=href) #{pst.number} 
-                    td(class='title', data-title=pst.title) 
-                      a(href=href) #{pst.title} 
+                    td(class='title', style='text-align:left', data-title=pst.title) 
+                      a(href=pst.location) #{pst.title} 
                     td(class='author')=pst.author
                     td(class='date', date-timestamp=date.format('X'), style="align:right") #{formattedDate}
   script(src='/js/list.min.js')

@@ -51,7 +51,7 @@ router.get('/about', (req, res, next) => {
 
 router.get('/posts', (req, res, next) => {
   res.render('archive', {
-    posts: posts.all,
+    posts: posts.all.concat(projects.all),
     title: "Archive"
   })
 })
@@ -90,7 +90,7 @@ posts.getAuthors()
   });
 
 projects.all.forEach(post => {
-  var route = 'projects/' + post.location;
+  var route = post.location;
   router.get('/' + route, (req, res, next) => {
     res.render(route + '/view', {
       guilds: guilds
