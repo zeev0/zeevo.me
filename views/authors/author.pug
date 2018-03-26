@@ -13,10 +13,9 @@ block article
           each pst in posts
             - var date = moment(pst.date)
             - var formattedDate = date.format('MMMM Do, YYYY');
-            - var href = '/posts/' + pst.number
             tr
               td(class='title', style='text-align:left' data-title=pst.title) 
-                a(href=href) #{pst.title} 
+                a(href='/' + pst.location) #{pst.title} 
               td(class='date', date-timestamp=date.format('X'), style="align:right") #{formattedDate}
   script(src='/js/list.min.js')
   script.
