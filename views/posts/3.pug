@@ -1,0 +1,9 @@
+//- {"title":"Agile - agile AgIle aGiLe","au
+extends ../post
+include ../authors/avis
+block header
+  p test
+block meta
+  - var date = moment(post.date).format('MMMM Do, YYYY');
+  +zeevo_avi(date)
+block article
