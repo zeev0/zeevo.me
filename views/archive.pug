@@ -19,8 +19,6 @@ block content
                   th(style='text-align:left') 
                     a(class='sort theading', date-sort='title') Title
                   th 
-                    a(class='sort theading', data-sort='category') Category
-                  th 
                     a(class='sort theading', data-sort='author') Author
                   th 
                     a(class='sort theading', data-sort='date') Date
@@ -28,11 +26,12 @@ block content
                 each pst in posts
                   - var date = moment(pst.date)
                   - var formattedDate = date.format('MMMM Do, YYYY');
+                  - var href = '/posts/' + pst.number
                   tr
                     td(class='title', style='text-align:left', data-title=pst.title) 
-                      a(href='/' + pst.category + '/' + pst.location) #{pst.title} 
-                    td(class='category')=pst.category
-                    td(class='author')=pst.author
+                      a(href=pst.location) #{pst.title} 
+                    td(class='author')
+                      a(href='/authors/' + pst.author) #{pst.author}
                     td(class='date', date-timestamp=date.format('X'), style="align:right") #{formattedDate}
   script(src='/js/list.min.js')
   script.

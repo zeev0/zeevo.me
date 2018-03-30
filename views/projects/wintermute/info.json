@@ -1,11 +1,10 @@
 {
   "title": "Wintermute",
   "author": "zeevo",
-  "location": "wintermute",
+  "location": "projects/wintermute",
   "description": "Test Description",
   "date": "01/02/2018",
   "summary": "test summary",
-  "category": "other",
   "tags": [
     "project",
     "discord"

@@ -6,7 +6,7 @@ block content
             header
                 h1 #{title}
                 .tagline
-                    | All writings.
+                    | #{tagline}
         article
           if !posts.length
             p(style="font-style:italic") Theres nothing here... 
@@ -15,7 +15,7 @@ block content
             div
               .post-entry
                   h2
-                    a(href='/' + pst.category + '/' + pst.location) #{pst.title}
+                    a(href=pst.location) #{pst.title}
                     br
                     span.post-date #{date}
                   .post-detail

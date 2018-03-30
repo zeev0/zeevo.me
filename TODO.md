@@ -4,8 +4,10 @@
 - [ ] Use VS Code instead of emacs and vim
 - [ ] YOLO Programming. A joke blog. But bring it back to the real world in the end.
 
-# Layout
-- [ ] Put nav bar on the sidebar
-
 # Bugs
 - [X] Links on homepage for wintermute don't work
+
+# Features
+- [ ] Wheel arrows hug bottom
+- [ ] RSS feed for posts
+- [ ] Author page

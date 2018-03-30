@@ -1,0 +1,37 @@
+extends ../page
+include avis
+block article
+  div
+    block description
+  if !posts.length
+    p(style="font-style:italic") Theres nothing here... 
+  if posts.length
+    div(id='posts')
+      table(style='width: 100%; text-align: right', cellpading='4')
+        col(align='left')
+        tbody(class='list')
+          each pst in posts
+            - var date = moment(pst.date)
+            - var formattedDate = date.format('MMMM Do, YYYY');
+            tr
+              td(class='title', style='text-align:left' data-title=pst.title) 
+                a(href='/' + pst.location) #{pst.title} 
+              td(class='date', date-timestamp=date.format('X'), style="align:right") #{formattedDate}
+  script(src='/js/list.min.js')
+  script.
+    $(document).ready(function() {
+    var postList = new List('posts', {
+      valueNames: [
+        {
+          name: 'title'
+          data:['title']
+        }
+        'category', 
+        'author', 
+        {
+          name: 'date',
+          attr: 'date-timestamp'
+        }
+      ]
+    });
+    });

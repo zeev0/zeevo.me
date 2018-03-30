@@ -1,27 +1,19 @@
 extends header
 block content
     body.home
-        .site-container
+        .site-container(style="position: relative")
             .site-header
                 include navbar
-                header
-                  div
-                    h1(style="display: inline-block; margin-right: 10px; margin-bottom: 5px") zeevo.me
-                    .tagline(style="display: inline-block") Shane 
-                  i(style="margin-top: 10px") I am a programmer for a huge corporation.
             article
-              if !posts.length
-                p(style="font-style:italic") Theres nothing here... 
-              each pst in posts
-                - var date = moment(pst.date).format('MMMM Do, YYYY');
-                div
-                  .post-entry
-                      h2
-                        a(href='/' + pst.category + '/' + pst.location) #{pst.title}
-                        span.post-date #{pst.category.charAt(0).toUpperCase() + pst.category.slice(1)}
-                        span.post-date #{date}
-                      .post-detail
-                          .post-summary #{pst.description}
-              if posts && posts.length > 0
-                  h2.readmore
-                      a(href='posts') Read more posts »
+              .meta
+                  block meta
+              .post
+                  block article
+            .wheel.table
+              ul(style="display:inline")
+                li
+                  a.button(href='/posts/' + cur) <
+                li
+                  a.button='random'
+                li
+                  a.button(href='/posts/' + next) >

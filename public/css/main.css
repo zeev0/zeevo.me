@@ -135,11 +135,6 @@ a {
   text-decoration: none
 }
 
-a:link,
-a:visited {
-  color: #3367d6
-}
-
 a:hover {
   color: #008dff
 }
@@ -258,7 +253,13 @@ body.draft:before {
 .site-container {
   min-height: 400px;
   max-width: 912px;
-  margin: 0
+  margin: 0;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.outersc {
+  border: 3px solid black
 }
 
 @media screen and (min-width:1178px) {
@@ -276,7 +277,7 @@ body.draft:before {
   margin: 10px 0 0
 }
 
-.site-header nav ul {
+.site-header nav table td ul {
   margin: 0;
   text-align: center
 }
@@ -310,7 +311,7 @@ footer {
 }
 
 .site-header nav ul li a {
-  color: rgba(51, 51, 51, .7)
+  color: rgba(51, 51, 51, .9)
 }
 
 .site-header nav ul li a:hover {
@@ -513,7 +514,7 @@ body.post article .post .post-info {
 }
 
 body.post article .meta {
-  display: none;
+  /* display: none; */
   color: #858585;
   font-size: 15px;
   line-height: 22px
@@ -527,7 +528,7 @@ body.post article .meta {
   }
 }
 
-body.post article .meta img {
+body.post article .meta .avi {
   float: left;
   margin-right: 12px;
 }
@@ -744,7 +745,8 @@ body.post article .meta img {
 
 .theading {
   cursor: pointer;
-  font-weight: normal
+  font-weight: normal;
+  color: #8a8a8a
 }
 
 .theading:hover {
@@ -753,4 +755,45 @@ body.post article .meta img {
 
 .fcenter {
   text-align: center
+}
+
+.pfooter {
+  padding-bottom: 40px
+}
+
+body {
+  margin-top: 20px;
+  background-image: url("/img/fractal.png");
+  color: #333;
+}
+
+.fa {
+  color: rgba(51, 51, 51, .9)
+}
+
+nav ul li:first-child {
+  float: left
+}
+
+.wheel {
+  text-align: center;
+  /* position: absolute;
+  bottom: 0;
+  left: 50%; */
+  margin-bottom: 20px
+}
+
+.wheel ul {
+  display: table;
+  margin: 0 auto;
+  /* margin-left: -130px;
+  width: 260px; */
+}
+
+.wheel a {
+  color: rgba(51, 51, 51, .9)
+}
+
+.wheel ul li {
+  display: inline
 }
