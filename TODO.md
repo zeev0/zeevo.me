@@ -8,6 +8,6 @@
 - [X] Links on homepage for wintermute don't work
 
 # Features
-- [ ] Wheel arrows hug bottom
+- [X] Wheel arrows hug bottom
 - [ ] RSS feed for posts
-- [ ] Author page
+- [X] Author page
