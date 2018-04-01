@@ -25,8 +25,10 @@ fi
 npm install --production
 npm prune --production
 
+set +e
 if tmux info &> /dev/null; then 
   tmux kill-session -t "zeevome"
 fi
+set -e
 
 tmux new-session -d -s "zeevome" "sudo npm run prod"
