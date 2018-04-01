@@ -1,9 +1,80 @@
-//- {"title":"Agile - agile AgIle aGiLe","au
+//- {"title":"Agile - agile AgIle aGiLe", "author": "zeevo", "date":"04/01/2018", "description": "You do know what all of these mean don't you?", "summary":"", "category":"", "tags":""}
 extends ../post
 include ../authors/avis
 block header
-  p test
+    h1 Agile jargon I have heard actually in real life.
 block meta
   - var date = moment(post.date).format('MMMM Do, YYYY');
   +zeevo_avi(date)
 block article
+  table(style='width: 100%', cellpadding=4, id='agile-xpost')
+    tbody
+      tr
+        td Jira Jockey
+        td Software Czar
+        td Code Artisan
+        td Idea Owner
+      tr
+        td Agile Therapist
+        td Scrum Senate
+        td Agile Assasin
+        td Story Points
+      tr
+        td Scrum Guru
+        td Code Craftsman
+        td Code Ninja
+        td Agile Philosophy
+      tr
+        td Byte Whisperer
+        td Story Shepard
+        td Story Groomer
+        td Agile Philosopher
+      tr
+        td Agile Thinker
+        td Thinkfluencer
+        td Ideamancer
+        td Intrapaneur
+      tr
+        td Code Genie
+        td Idea Man
+        td Devoptometrist
+        td Fact Owner
+      // break
+      tr(style="height:30px")
+      tr
+        td Extreme Agile
+        td Fast Agile
+        td Lean Agile
+        td Slow Agile
+      tr
+        td Agile Coach
+        td Scrum Coach
+        td Dev Coach
+        td Scum Consultant
+      tr
+        td Agile Consultant
+        td Code Jedi
+        td Code Sith
+        td Swim Lane
+      tr
+        td Cloudification
+        td Agilization
+        td Scrum Bootcamp
+        td Subject Matter Optimist
+      tr
+        td Idea Lead
+        td Code Overseer
+        td 
+        td 
+      tr
+        td 
+        td 
+        td 
+        td 
+  script.
+    var colors = ["#FF5353", "#DD597D", "#CA00CA", "#A41CC6", "#7373FF", "#29AFD6", "#74BAAC"];
+    $("#agile-xpost td").each(function() {
+      var random_color = colors[Math.floor(Math.random() * colors.length)];
+      $(this).css('color', random_color)
+      $(this).css('font-weight', 'bold')
+    });

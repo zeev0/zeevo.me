@@ -25,6 +25,7 @@ class PostService extends GenericService {
   constructor() {
     super();
     this._initializePosts();
+    console.log(this.all)
   }
 
   _initializePosts() {
