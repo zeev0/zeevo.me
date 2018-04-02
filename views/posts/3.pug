@@ -1,8 +1,9 @@
-//- {"title":"Agile - agile AgIle aGiLe", "author": "zeevo", "date":"04/01/2018", "description": "You do know what all of these mean don't you?", "summary":"", "category":"", "tags":""}
+//- {"title":"Agile - agile AgIle aGiLe", "author": "zeevo", "date":"04/01/2018", "tagline": "You do know what all of these mean don't you?", "summary":"", "category":"other", "tags":""}
 extends ../post
 include ../authors/avis
 block header
-    h1 Agile jargon I have heard actually in real life.
+    h1 Agile jargon I have actually heard in real life.
+    .tagline=post.tagline
 block meta
   - var date = moment(post.date).format('MMMM Do, YYYY');
   +zeevo_avi(date)
@@ -28,7 +29,7 @@ block article
         td Byte Whisperer
         td Story Shepard
         td Story Groomer
-        td Agile Philosopher
+        td Fast Agile
       tr
         td Agile Thinker
         td Thinkfluencer
@@ -43,7 +44,7 @@ block article
       tr(style="height:30px")
       tr
         td Extreme Agile
-        td Fast Agile
+        td Agile Philosopher
         td Lean Agile
         td Slow Agile
       tr
@@ -64,13 +65,13 @@ block article
       tr
         td Idea Lead
         td Code Overseer
-        td 
-        td 
+        td Scrum Caliphate
+        td JavaScript Jenie
       tr
-        td 
-        td 
-        td 
-        td 
+        td Subject Matter Artist
+        td Widgit Wizard
+        td Scrum Liaison
+        td RESTafarian
   script.
     var colors = ["#FF5353", "#DD597D", "#CA00CA", "#A41CC6", "#7373FF", "#29AFD6", "#74BAAC"];
     $("#agile-xpost td").each(function() {
