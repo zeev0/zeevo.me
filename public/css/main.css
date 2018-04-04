@@ -298,6 +298,12 @@ body.draft:before {
   }
 }
 
+@media screen and (max-width:768px) {
+  .site-header nav ul {
+    text-align: center
+  }
+}
+
 body.archive article .year,
 body.home article .year,
 footer {
@@ -771,14 +777,10 @@ body {
   color: rgba(51, 51, 51, .9)
 }
 
-nav ul li:first-child {
-  float: left
-}
-
 .wheel {
   text-align: center;
   /* position: absolute;
-  bottom: 0; left: 50%; */
+A bottom: 0; left: 50%; */
   margin-bottom: 20px
 }
 
