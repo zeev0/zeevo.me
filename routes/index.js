@@ -5,18 +5,19 @@ var path = require('path');
 var request = require('request');
 var moment = require('moment');
 var posts = require('../services/posts');
-var projects = require('../services/projects')
-var onlyUnique = require('../utils/utils').onlyUnique
+var projects = require('../services/projects');
+var rss = require('../services/rss');
+var onlyUnique = require('../utils/utils').onlyUnique;
 
 function getGuilds() {
-  return 72;
-  // request('http://amas.us.to:8888/wintermute', (err, res, body) => {
-  //   if (err) {
-  //     console.log(err);
-  //     return;
-  //   }
-  //   return JSON.parse(body).guilds;
-  // })
+  // return 72;
+  request('http://amas.us.to:8888/wintermute', (err, res, body) => {
+    if (err) {
+      console.log(err);
+      return;
+    }
+    return JSON.parse(body).guilds;
+  })
 }
 
 var guilds = getGuilds();
@@ -101,6 +102,11 @@ projects.all.forEach(post => {
 router.get('/posts/random', (req, res, next) => {
   var random = posts.all[Math.floor(Math.random() * posts.all.length)]
   res.redirect('/posts/' + random.number)
+})
+
+router.get('/posts/rss.xml', (req, res, next) => {
+  res.set('Content-Type', 'text/xml')
+  res.send(rss.xml())
 })
 
 module.exports = router;

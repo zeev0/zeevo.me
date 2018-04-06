@@ -67,4 +67,5 @@ class PostService extends GenericService {
 
 }
 
-module.exports = new PostService();
+var posts = new PostService()
+module.exports = posts;
