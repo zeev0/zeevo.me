@@ -1,0 +1,13 @@
+mixin stars(num)
+  div(style='margin-top:10px')
+    - var i = 0
+    - floor = Math.floor(num)
+    while i < floor
+      img(src='/img/stars/full.png', width=48)
+      - i++;
+    - var i = 0
+    if num % 1 !== 0
+      img(src='/img/stars/half.png', width=48)
+    while i < (3 - num) 
+      img(src='/img/stars/empty.png', width=48)
+      - i++

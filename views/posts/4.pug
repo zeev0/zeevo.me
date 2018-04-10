@@ -1,12 +1,14 @@
-//- {"title":"A Quiet Place - Film Review", "author": "zeevo", "date":"09/25", "tagline": "More like: Not A Quiet Place (Your movie theatre)", "summary":"", "category":"films"}
+//- {"title":"A Quiet Place - Film Review", "author": "zeevo", "date":"04/10/2018", "tagline": "More like: (Your movie theatre is) Not A Quiet Place ", "summary":"", "category":"films"}
 extends ../post
 include ../authors/avis
+include ../utils
 block header
     h1=post.title 
     .tagline=post.tagline
 block meta
   - var date = moment(post.date).format('MMMM Do, YYYY');
   +zeevo_avi(date)
+  +stars(2.5)
 block article
   p A Quiet Place is a good movie. It's not great. But its good.
     |  Every marginally good horror movie these
@@ -17,9 +19,14 @@ block article
     |  horror.
   p At its best, A Quiet Place is a brutal and dark story about mistakes and sacrafice. Jim Halpert
     |  (John Krasinski) gives an amazing performance, and likewise for Emily Blunt. Unfortunately, their children
-    |  in the movie act more of a plot device to than real characters; This is especially true for the son.
+    |  in the movie act more like plot devices than actual characters.
     |  At its worst, the film is just another psuedointellectual horror flick that falls apart as soon as you
-    |  start to think even a little bit. For some movies, it doesn't matter if there are plotholes or if the characters
-    |  are braindead, but A Quiet Place wants you to believe that its a game changer. It falls short.
-
-  h1 Warning! Spoilers below!
+    |  start to think even a little bit. An
+    i  It Comes At Night 
+    |  but worse. For some movies, it doesn't matter if there are plotholes or if the characters
+    |  are braindead stupid, but A Quiet Place wants you to believe that its a game changer in the age of 
+    |  art-horror movies like 
+    i  The Witch
+    |  or
+    i  The Babadook
+    |  -- It falls short.
