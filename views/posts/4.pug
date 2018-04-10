@@ -1,0 +1,25 @@
+//- {"title":"A Quiet Place - Film Review", "author": "zeevo", "date":"09/25", "tagline": "More like: Not A Quiet Place (Your movie theatre)", "summary":"", "category":"films"}
+extends ../post
+include ../authors/avis
+block header
+    h1=post.title 
+    .tagline=post.tagline
+block meta
+  - var date = moment(post.date).format('MMMM Do, YYYY');
+  +zeevo_avi(date)
+block article
+  p A Quiet Place is a good movie. It's not great. But its good.
+    |  Every marginally good horror movie these
+    |  days gets critical acclaim just for 
+    i not 
+    |  being pure schlock, and I predict
+    |  that this is no exception. The film is a powerful, bleak, but ultimately, predictable survival
+    |  horror.
+  p At its best, A Quiet Place is a brutal and dark story about mistakes and sacrafice. Jim Halpert
+    |  (John Krasinski) gives an amazing performance, and likewise for Emily Blunt. Unfortunately, their children
+    |  in the movie act more of a plot device to than real characters; This is especially true for the son.
+    |  At its worst, the film is just another psuedointellectual horror flick that falls apart as soon as you
+    |  start to think even a little bit. For some movies, it doesn't matter if there are plotholes or if the characters
+    |  are braindead, but A Quiet Place wants you to believe that its a game changer. It falls short.
+
+  h1 Warning! Spoilers below!
