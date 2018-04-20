@@ -807,3 +807,7 @@ A bottom: 0; left: 50%; */
 #agile-words [class^="col-"] {
   margin-bottom: 30px;
 }
+
+.bordered-img {
+  border: 1px solid black
+}
