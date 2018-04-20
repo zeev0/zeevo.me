@@ -50,8 +50,11 @@ router.get('/about', (req, res, next) => {
 })
 
 router.get('/posts', (req, res, next) => {
+  let entries = posts.all.concat(projects.all).sort((a, b) => {
+    return new Date(b.date) - new Date(a.date);
+  })
   res.render('archive', {
-    posts: posts.all.concat(projects.all),
+    posts: entries,
     title: "Archive"
   })
 })
@@ -81,7 +84,10 @@ posts.getAuthors()
   .filter(onlyUnique)
   .forEach(author => {
     var entries = posts.getByAuthor(author)
-      .concat(projects.getByAuthor(author));
+      .concat(projects.getByAuthor(author))
+      .sort((a, b) => {
+        return new Date(b.date) - new Date(a.date);
+      })
     router.get('/authors/' + author, (req, res, next) => {
       res.render('authors/zeevo', {
         posts: entries
