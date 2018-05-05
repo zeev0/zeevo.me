@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/zeevo
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://zeevo.me
+  * I am zeevo (https://keybase.io/zeevo) on keybase.
+  * I have a public key ASBHhrhcUTKLmfxJ55Cj7BpBiZ8WXbgpwqi8q8v5ZDrwHAo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "01204786b85c51328b99fc49e790a3ec1a41899f165db829c2a8bcabcbf9643af01c0a",
+      "host": "keybase.io",
+      "kid": "01204786b85c51328b99fc49e790a3ec1a41899f165db829c2a8bcabcbf9643af01c0a",
+      "uid": "3820876ddbe05684dbcebd707a556a19",
+      "username": "zeevo"
+    },
+    "merkle_root": {
+      "ctime": 1525496932,
+      "hash": "42c9bc9dcb630d9ffdf97dec22224fdcb6c2b954dfc7507a6043fe7312ca953f90e649694d1d5889e2f531d0491d4a69899cc1087d74a8d3f2b93c33084b2f0d",
+      "hash_meta": "5589a3308edf56dcfb5781afc16a9a4a129fa8383f14b4af508a7eaef2504853",
+      "seqno": 2487388
+    },
+    "service": {
+      "entropy": "fXTmER+uHBiKEzvaYjSA+gDS",
+      "hostname": "zeevo.me",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "1.0.47"
+  },
+  "ctime": 1525496939,
+  "expire_in": 504576000,
+  "prev": "3ca3d805aaeaae04727e941bafbd8972e25efdfa56c5ec8210b2d6a6deb0d527",
+  "seqno": 9,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgR4a4XFEyi5n8SeeQo+waQYmfFl24KcKovKvL+WQ68BwKp3BheWxvYWTESpcCCcQgPKPYBarqrgRyfpQbr72JcuJe/fpWxeyCELLWpt6w1SfEIOv2NV86cWUvQwcEpUTHRXMKSYvGQi/8tqTnPlrkBEatAgHCo3NpZ8RA5n95uiclnBvdeIirlnnlWQCyraxeWyNcrYNoyMS9aqBFD4fvQhELErtsABA2mSbea+DnN8JKMS+gjjQzpnsEAahzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIP8p1/FjAiv/bnMFv1xkzOTN0++l0MpBp7nlVi2z8RNZo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/zeevo
+
+==================================================================
