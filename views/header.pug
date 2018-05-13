@@ -2,13 +2,23 @@ doctype html
 html(lang='en')
     head
         meta(charset='utf-8')
-        title zeevo.me
+        - let mtitle = 'zeevo.me'
+        - let mdescr = 'Programming, hacking, cyberpunk, ramblings, and code'
+        - let mkeywords = 'zeevo'
+        if title || (post && post.title && post.title !== '')
+          - mtitle = title || post.title 
+          - mtitle = mtitle + ' - zeevo.me'
+        if descr || (post && post.description && post.description !== '')
+          - mdescr = descr || post.description
+        if keywords || (post && post.keywords && post.keywords !== '')
+          - mkeywords = keywords || post.keywords
         meta(http-equiv='X-UA-Compatible', content='ie=edge,chrome=1')
         meta(name='viewport', content='width=device-width,initial-scale=1')
-        meta(name='description', content='')
-        meta(name="author", content="")
-        meta(name="description", content="")
-        meta(name="keywords", content="")
+        meta(name='description', content=mdescr)
+        meta(name="author", content="zeevo")
+        meta(name="keywords", content=mkeywords)
+        meta(name="title", content=mtitle)
+        title=mtitle
         link(rel='stylesheet', type='text/css', href='/css/font-awesome.min.css')
         link(rel='stylesheet', type='text/css', href='/css/bootstrap.min.css')
         link(rel='stylesheet', type='text/css', href='/css/lightbox.min.css')
