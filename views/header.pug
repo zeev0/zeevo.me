@@ -1,6 +1,7 @@
 doctype html
 html(lang='en')
     head
+    
         meta(charset='utf-8')
         - let mtitle = 'zeevo.me'
         - let mdescr = 'Programming, hacking, cyberpunk, ramblings, and code'
@@ -15,10 +16,20 @@ html(lang='en')
         meta(http-equiv='X-UA-Compatible', content='ie=edge,chrome=1')
         meta(name='viewport', content='width=device-width,initial-scale=1')
         meta(name='description', content=mdescr)
-        meta(name="author", content="zeevo")
+        if post && post.author && post.author !== 'unknown'
+          meta(name="author", content="zeevo")
         meta(name="keywords", content=mkeywords)
         meta(name="title", content=mtitle)
+
+        meta(name="twitter:card" content="summary")
+        meta(name="twitter:site" content="@zeevosec")
+        if post && post.twitter
+          meta(name="twitter:creator" content=post.twitter)
+        meta(name="twitter:description" content=mdescr)
+        meta(name="twitter:image" content="/img/bedroom.png")
+
         title=mtitle
+
         link(rel='stylesheet', type='text/css', href='/css/font-awesome.min.css')
         link(rel='stylesheet', type='text/css', href='/css/bootstrap.min.css')
         link(rel='stylesheet', type='text/css', href='/css/lightbox.min.css')
