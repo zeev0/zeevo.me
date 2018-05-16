@@ -1,7 +1,41 @@
 extends author
 block meta
-  div(style='text-align:center')
-    img(style='display:inline' src='/img/robotcircle2.png', width=100)
-    h1(style='color:#444;margin-top:0px') zeevo
+  .author-meta
+    .container
+      .row
+        .col-md-4
+          .author-pic
+            img(style='display:inline' src='/img/robotcircle2.png', width=100)
+            h1 zeevo
+        .col-md-4
+          h2 Where did "zeevo" come from?
+          p
+            | zeevo was a randomized name from an online RPG that I used to play.
+            | I used it on a few other forums and now it has just become what
+            | people call me on the internet. 
+        .col-md-4
+          .row
+            .col-md-12
+              .row
+                .col-md-12
+                  p 
+                    | Programmer. Hacker. Cybersecurity and Infosec enthusiast.
+                    | Creator of this site. I write clean, secure code for a living. 
+                    | I blog about cyberpunk stuff and software development.
+                    | Find me on the web here:
+              .row
+                .col-md-12
+                  .row
+                    .col-md-6
+                      a.nodec(href="https://github.com/zeevosec")
+                          i.fa.fa-twitter &nbsp Twitter
+                      a.nodec(href="https://github.com/zeevosec")
+                          i.fa.fa-github  &nbsp Github
+                    .col-md-6
+                      a.nodec(href="https://medium.com/@zeevo")
+                          i.fa.fa-medium  &nbsp Medium
+                      a.nodec(href="https://discordapp.com")
+                          i.fa.fa-gamepad &nbsp #0572
+
 
 block description
