@@ -338,7 +338,7 @@ footer {
 
 @media screen and (min-width:768px) {
   .site-header header {
-    padding: 20px 48px
+    padding: 0px 48px
   }
   .site-header header h1 {
     margin-top: 20px;
@@ -833,6 +833,7 @@ A bottom: 0; left: 50%; */
   margin-left: 0px
 }
 
-.author-meta h1 {
+.author-meta h1, 
+.author-meta h2 {
   margin-top: 0px;
 }

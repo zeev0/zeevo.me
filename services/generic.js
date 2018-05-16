@@ -5,7 +5,8 @@ class GenericService {
   getAuthors() {
     return this.all
       .map(post => {
-        if (post.author) post.author.toLowerCase();
+        if (post.author)
+          return post.author.toLowerCase();
       })
       .filter(onlyUnique);
   }
