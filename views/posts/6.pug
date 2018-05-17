@@ -1,4 +1,4 @@
-//- {"title":"How to deploy your Github project to AWS EC2 easily", "author": "zeevo", "twitter":"@zeevosec", "date":"05/17/2018", "tagline": "Dead simple setup that allows you to rapidly deploy", "summary":"", "category":"films"}
+//- {"title":"How to deploy your Node project to AWS EC2 easily", "author": "zeevo", "twitter":"@zeevosec", "date":"05/17/2018", "tagline": "Dead simple setup that allows for rapid deployment. Great for prototyping.", "keywords": "aws,node,nodejs,github", "summary":"", "category":"films"}
 extends ../post
 include ../authors/avis
 include ../utils
@@ -9,3 +9,13 @@ block meta
   - var date = moment(post.date).format('MMMM Do, YYYY');
   +zeevo_avi(date)
 block article
+
+  h2 1. Create an AWS EC2 instance
+  p Log into 
+    a(href="https://aws.amazon.com/") AWS 
+    | and create an account if you don't have one already. Log in and you should see your dashboard, or a list
+    | of services
+  img(src='/img/posts/6-a.png')
+  p Select EC2. Then select Launch Instance.
+  img(src='/img/posts/6-b.png')
+  p If you're just prototyping a simple website then 
