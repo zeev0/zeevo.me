@@ -1,0 +1,11 @@
+//- {"title":"How to deploy your Github project to AWS EC2 easily", "author": "zeevo", "twitter":"@zeevosec", "date":"05/17/2018", "tagline": "Dead simple setup that allows you to rapidly deploy", "summary":"", "category":"films"}
+extends ../post
+include ../authors/avis
+include ../utils
+block header
+  h1=post.title 
+  .tagline=post.tagline
+block meta
+  - var date = moment(post.date).format('MMMM Do, YYYY');
+  +zeevo_avi(date)
+block article
