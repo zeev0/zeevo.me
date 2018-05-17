@@ -40,9 +40,7 @@ router.get('/', (req, res, next) => {
 });
 
 router.get('/wintermute', (req, res, next) => {
-  res.render('projects/wintermute/view', {
-    guilds: guilds
-  });
+  res.redirect('/projects/wintermute');
 })
 
 router.get('/about', (req, res, next) => {
@@ -99,7 +97,8 @@ projects.all.forEach(post => {
   var route = post.location;
   router.get('/' + route, (req, res, next) => {
     res.render(route + '/view', {
-      guilds: guilds
+      guilds: guilds,
+      post: post
     })
   })
 })

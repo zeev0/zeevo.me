@@ -2,11 +2,11 @@
   "title": "Wintermute",
   "author": "zeevo",
   "location": "projects/wintermute",
-  "description": "A general purpose Discord bot",
+  "description": "A general purpose Discord bot that just works (and does trivia)",
   "date": "01/02/2018",
-  "summary": "test summary",
   "tags": [
     "project",
     "discord"
-  ]
+  ],
+  "keywords": "discord,bot,trivia"
 }
