@@ -18,4 +18,81 @@ block article
   img(src='/img/posts/6-a.png')
   p Select EC2. Then select Launch Instance.
   img(src='/img/posts/6-b.png')
-  p If you're just prototyping a simple website then 
+  p If you're just prototyping a simple website then choosing the latest Ubuntu Server image is fine.
+    |  Make sure to save your private key somewhere safe.
+
+  h2 2. Connecting to your EC2 instance
+  p Test your new EC2 instance by connecting to it.
+  code ssh -i keyname.pem user@address
+  p Or press the Connect button while on your EC2 console for exact instructions.
+
+  h2 3. Copy your git repo to your EC2 instance
+  p
+    code scp -i yourkey.pem -r yourproject your-user@your-ec2-address:~
+  p If you chose the Ubuntu Server image, your user is "ubuntu" by default. Don't forget the ":~" at the end.
+
+  h2 4. Configure your "push" git repo on AWS
+  p
+    div
+      code ssh -i yourkey.pem -your-user@your-ec2-address
+    div
+      code git clone --bare yourproject yourproject.git
+  p You now have a copy of the git repo you originally pushed. Now configure your original to pull from it.
+    div
+      code cd yourproject
+    div
+      code git remote set-url origin ../yourproject.git
+  h2 4. Deployment scripts
+  p Use scripts to bootstrap your application
+  p
+    div
+      code cd yourproject
+    div
+      code mkdir deploy
+    div
+      code touch push.sh start.sh
+  i push.sh
+  pre
+    code
+      | #!/bin/bash
+      | 
+      | set -e
+      | 
+      | ### Configuration ###
+      | ### Change me for your app! ###
+      | 
+      | APP_DIR=~/yourproject
+      | GIT_URL=~/yourproject.git
+      | USER=ubuntu 
+      | 
+      | ###
+      | 
+      | set -x
+      | 
+      | # Pull latest code
+      | if [[ -e $APP_DIR ]]; then
+      |   cd $APP_DIR
+      |   git pull
+      | else
+      |   git clone $GIT_URL $APP_DIR
+      |   cd $APP_DIR/
+      | fi
+      | 
+      | # Install dependencies
+      | npm install --production
+      | npm prune --production
+      | 
+      | # Start your app
+      | # I like to run it in a tmux session so I can view logging if necessary
+      | set +e
+      | if tmux info &> /dev/null; then 
+      |   tmux kill-session -t "yourproject"
+      | fi
+      | set -e
+      | 
+      | tmux new-session -d -s "yourproject" "npm run prod"
+  p
+  i start.sh
+    pre
+
+
