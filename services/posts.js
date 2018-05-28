@@ -38,7 +38,7 @@ class PostService extends GenericService {
       var p = validateAndParse(firstline);
       p.view = postDir + '/' + view.slice(0, -4);
       p.number = view.split('.')[0];
-      p.location = 'posts/' + p.number
+      if (!p.url) p.url = p.number
       if (p !== null) {
         posts.push(p);
       }

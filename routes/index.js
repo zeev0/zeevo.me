@@ -8,6 +8,8 @@ var posts = require('../services/posts');
 var projects = require('../services/projects')
 var onlyUnique = require('../utils/utils').onlyUnique
 
+const BASE_POST_LOC = '/posts/';
+
 function getGuilds() {
   return 72;
   // request('http://amas.us.to:8888/wintermute', (err, res, body) => {
@@ -65,13 +67,19 @@ router.get('/projects', (req, res, next) => {
 })
 
 posts.all.forEach(post => {
-  var route = '/posts/' + post.number;
-  router.get(route, (req, res, next) => {
+  let route = BASE_POST_LOC + post.url;
+  let next, prev;
+  let n = posts.all.indexOf(post) + 1
+  let p = posts.all.indexOf(post) - 1
+  if (n < posts.all.length) next = BASE_POST_LOC + posts.all[n].url
+  if (p >= 0) prev = BASE_POST_LOC + posts.all[p].url
+  console.log(prev, next)
+  router.get(route, (req, res, nxt) => {
     res.render('posts/' + post.number, {
       post: post,
-      cur: post.number,
-      prev: +post.number - 1,
-      next: +post.number + 1,
+      cur: post.url,
+      prev: prev,
+      next: next,
       total: posts.all.length
     })
   })

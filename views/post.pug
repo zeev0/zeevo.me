@@ -2,16 +2,16 @@ extends page
 block wheel
   .wheel.table
     ul(style="display:inline")
-      - var prevhidden;
-      - var nexthidden;
-      - if (prev <= 0) prevhidden = 'visibility: hidden' 
-      - if (next > total) nexthidden = 'visibility: hidden' 
+      - let prevhidden, nexthidden;
+      - if (!prev) prevhidden = 'visibility: hidden' 
+      - if (!next) nexthidden = 'visibility: hidden' 
+      - console.log(next)
       li
-        a.button(href='/posts/' + prev, style=prevhidden) <
+        a.button(href=prev, style=prevhidden) <
       li
         a.button(href='/posts/random') Random
       li
-        a.button(href='/posts/' + next, style=nexthidden) >
+        a.button(href=next, style=nexthidden) >
     - var outof = post.number + '/' + total;
     div
       i=outof

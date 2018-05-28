@@ -25,17 +25,17 @@ block article
   p Test your new EC2 instance by connecting to it.
   code ssh -i keyname.pem user@your-ec2-address
   p Or press the Connect button while on your EC2 console for exact instructions.
-  p If you chose the Ubuntu Server image, your user is
-    code ubuntu
-    | by default. Don't forget the 
-    code :~
-    |  at the end.
   p Your ec2 address looks something like 
     code ec2-55-55-555-55.xx-yyyy-5.compute.amazonaws.com
 
   h2 3. Copy your git repo to your EC2 instance
   p
     code scp -i yourkey.pem -r yourproject your-user@your-ec2-address:~
+  p If you chose the Ubuntu Server image, your user is
+    code ubuntu
+    | by default. Don't forget the 
+    code :~
+    |  at the end.
 
   h2 4. Configure your "push" git repo on AWS
   p
@@ -139,25 +139,25 @@ block article
   p
     | Add a npm script for easy usage
   i package.json
-    pre
-      code
-        | {
-        |   "name": "yourproject",
-        |   "version": "0.0.0",
-        |   "scripts": {
-        |     "start": "node ./bin/www",
-        |     "prod": "export NODE_ENV=production && node ./bin/www",
-        |     "dev": "export NODE_ENV=development && node ./bin/www",
-        |     "deploy": "bash deploy/deploy.sh"
-        |   },
-        |  ...
-  h2 Commit and push everything
+  pre
+    code
+      | {
+      |   "name": "yourproject",
+      |   "version": "0.0.0",
+      |   "scripts": {
+      |     "start": "node ./bin/www",
+      |     "prod": "export NODE_ENV=production && node ./bin/www",
+      |     "dev": "export NODE_ENV=development && node ./bin/www",
+      |     "deploy": "bash deploy/deploy.sh"
+      |   },
+      |  ...
+  h2 7. Commit and push everything
   p
     code git add package.json deploy/runner.sh deploy/deploy.sh
   p
     code git commit -m 'Add deployment scripts'
   p
     code git push origin master
-  h2 Deploy!
+  h2 8. Deploy!
   p
     code npm run deploy
