@@ -26,10 +26,9 @@ block content
                 each pst in posts
                   - var date = moment(pst.date)
                   - var formattedDate = date.format('MMMM Do, YYYY');
-                  - var href = '/posts/' + pst.number
                   tr
                     td(class='title', style='text-align:left', data-title=pst.title) 
-                      a(href=pst.location) #{pst.title} 
+                      a(href=pst.url) #{pst.title} 
                     td(class='author')
                       a(href='/authors/' + pst.author) #{pst.author}
                     td(class='date', date-timestamp=date.format('X'), style="align:right") #{formattedDate}
