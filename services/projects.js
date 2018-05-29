@@ -7,6 +7,7 @@ class ProjectService extends GenericService {
 
   constructor() {
     super();
+    this.BASE_PROJECT_LOC = '/projects/';
     this._initialize();
   }
 
@@ -15,7 +16,9 @@ class ProjectService extends GenericService {
     var postDir = __dirname + '/../views/projects';
     fs.readdirSync(postDir).forEach(project => {
       let postLoc = postDir + '/' + project + '/info.json';
-      posts.push(require(postLoc))
+      let proj = require(postLoc);
+      proj.url = this.BASE_PROJECT_LOC + proj.url
+      posts.push(proj)
     })
     posts.sort((a, b) => {
       return new Date(a.date) - new Date(b.date);

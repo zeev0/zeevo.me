@@ -24,6 +24,7 @@ class PostService extends GenericService {
 
   constructor() {
     super();
+    this.BASE_POST_LOC = '/posts/';
     this._initializePosts();
   }
 
@@ -38,7 +39,8 @@ class PostService extends GenericService {
       var p = validateAndParse(firstline);
       p.view = postDir + '/' + view.slice(0, -4);
       p.number = view.split('.')[0];
-      if (!p.url) p.url = p.number
+      if (!p.url) p.url = p.number;
+      p.url = this.BASE_POST_LOC + p.url;
       if (p !== null) {
         posts.push(p);
       }

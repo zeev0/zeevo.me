@@ -67,13 +67,12 @@ router.get('/projects', (req, res, next) => {
 })
 
 posts.all.forEach(post => {
-  let route = BASE_POST_LOC + post.url;
   let next, prev;
   let n = posts.all.indexOf(post) + 1
   let p = posts.all.indexOf(post) - 1
-  if (n < posts.all.length) next = BASE_POST_LOC + posts.all[n].url
-  if (p >= 0) prev = BASE_POST_LOC + posts.all[p].url
-  router.get(route, (req, res, nxt) => {
+  if (n < posts.all.length) next = posts.all[n].url
+  if (p >= 0) prev = posts.all[p].url
+  router.get(post.url, (req, res, nxt) => {
     res.render('posts/' + post.number, {
       post: post,
       cur: post.url,
@@ -92,7 +91,7 @@ posts.getAuthors()
       .concat(projects.getByAuthor(author))
       .sort((a, b) => {
         return new Date(b.date) - new Date(a.date);
-      })
+      });
     router.get('/authors/' + author, (req, res, next) => {
       res.render('authors/zeevo', {
         posts: entries
@@ -101,9 +100,8 @@ posts.getAuthors()
   });
 
 projects.all.forEach(post => {
-  var route = post.location;
-  router.get('/' + route, (req, res, next) => {
-    res.render(route + '/view', {
+  router.get(post.url, (req, res, next) => {
+    res.render(post.template + '/view', {
       guilds: guilds,
       post: post
     })
