@@ -28,10 +28,6 @@ class PostService extends GenericService {
     this._initializePosts();
   }
 
-  getLatest() {
-    return this.all[this.all.length - 1]
-  }
-
   _initializePosts() {
     var posts = [];
     var postDir = __dirname + '/../views/posts';
