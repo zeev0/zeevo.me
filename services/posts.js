@@ -46,7 +46,7 @@ class PostService extends GenericService {
       }
     })
     posts.sort((a, b) => {
-      return a.number - b.number;
+      return b.number - a.number;
     });
     this.all = posts;
   }
