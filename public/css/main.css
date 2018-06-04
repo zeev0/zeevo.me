@@ -259,7 +259,7 @@ body.draft:before {
 }
 
 .outersc {
-  border: 3px solid black
+  border: 1px solid black
 }
 
 @media screen and (min-width:1178px) {
@@ -775,7 +775,7 @@ body {
   color: #333;
 }
 
-.fa {
+.fab {
   color: rgba(51, 51, 51, .9)
 }
 

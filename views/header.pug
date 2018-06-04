@@ -9,6 +9,8 @@ html(lang='en')
         if title || (post && post.title && post.title !== '')
           - mtitle = title || post.title 
           - mtitle = mtitle + ' - zeevo.me'
+        if stitle
+          - mtitle = stitle
         if description || (post && post.description && post.description !== '')
           - mdescr = description || post.description
         if keywords || (post && post.keywords && post.keywords !== '')
