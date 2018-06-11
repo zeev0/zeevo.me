@@ -1,0 +1,12 @@
+//- {"title":"A history of programming languages", "author": "zeevo", "twitter":"@zeevosec", "date":"06/11/2018", "tagline": "Are our programming languages flipping sides?", "keywords": "programming,coding,languages,funny", "url": "history-of-programming-langs", "summary":"", "category":"programming"}
+extends ../post
+include ../authors/avis
+include ../utils
+block header
+  h1=post.title 
+  .tagline=post.tagline
+block meta
+  - var date = moment(post.date).format('MMMM Do, YYYY');
+  +zeevo_avi(date)
+block article
+  img(src='/img/posts/langs.png')
