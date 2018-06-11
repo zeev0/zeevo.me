@@ -31,7 +31,7 @@ setInterval(getGuilds, interval);
 
 router.get('/', (req, res, next) => {
   var latest = posts.all.slice(0, 4);
-  res.render('posts', {
+  res.render('index', {
     posts: latest,
     title: 'Recent posts',
     tagline: 'Thoughts and writings',

@@ -203,9 +203,6 @@ hr {
   width: 321px;
   height: 11px;
   margin: 40px auto;
-  border: 0;
-  background-image: url(img/hr%402x.png);
-  background-repeat: no-repeat;
   background-size: 100%
 }
 
