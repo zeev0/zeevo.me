@@ -1,44 +1,16 @@
-//- {"title":"A Quiet Place - Film Review", "author": "zeevo", "twitter":"@zeevosec", "date":"04/10/2018", "tagline": "More like: (Your movie theatre is) Not A Quiet Place ", "summary":"", "category":"films", "url":"a-quiet-place-review"}
+//- {"title":"Random cyberpunk art", "date":"04/20/2018", "tagline": "", "summary":"", "category":""}
 extends ../post
 include ../authors/avis
 include ../utils
 block header
-    h1=post.title 
-    .tagline=post.tagline
 block meta
   - var date = moment(post.date).format('MMMM Do, YYYY');
-  +zeevo_avi(date)
-  +stars(2.5)
 block article
-  p A Quiet Place is a good movie. It's not great. But its good.
-    |  Every marginally good horror movie these
-    |  days gets critical acclaim just for 
-    i not 
-    |  being pure schlock, and I predict
-    |  that this is no exception. The film is a powerful, bleak, but ultimately, predictable survival
-    |  horror.
-  i Spoilers below...
-  p At its best, A Quiet Place is a brutal and dark story about mistakes and sacrifice. Jim Halpert
-    |  (John Krasinski) gives an amazing performance, and likewise for Emily Blunt. Unfortunately, their children
-    |  in the movie act more like plot devices than actual characters.
-    |  At its worst, the film is just another psuedointellectual horror flick that falls apart as soon as you
-    |  start to think even a little bit. I hope you are good at suspending disbelief because you will be asking
-    |  yourself lots of basic questions wondering if you missed something. Wheres the military? How did no one find
-    |  the monsters' weakness? Why not live by the waterfall? How can the monster hear things miles away, but not hear heavy breathing 5 feet away? 
-    |  Wouldn't fireworks attract every monster within miles? A shotgun
-    |  going off seems to.
-  p
-    |  The movie also makes sure to remind you that the monsters are weak to something. "What is their WEAKNESS?!", "Hmmm I wonder if they have a WEAKNESS..."
-    |  "do you think we will find out their WEAKNESS in the movie??"-- Any doubt that our characters will find a
-    i  Signs
-    | -esque 'gotcha!' is gone.
-  p
-    |  For some movies, it doesn't matter if there are plotholes or if the characters
-    |  are braindead stupid, but 
-    i  A Quiet Place 
-    |  wants you to believe that its a game changer in the age of 
-    |  art-horror movies like 
-    i  The Witch
-    |  or
-    i  The Babadook
-    |  -- it falls just a little short.
+  .containter
+    .row
+      .col-md-6(style="margin-bottom: 10px")
+        a(href='/img/posts/5-a.jpg', data-lightbox='5-a')
+          img.bordered-img(src='/img/posts/5-a.jpg')
+      .col-md-6(style="margin-bottom: 10px")
+        a(href='/img/posts/5-b.jpg', data-lightbox='5-a')
+          img.bordered-img(src='/img/posts/5-b.jpg')
