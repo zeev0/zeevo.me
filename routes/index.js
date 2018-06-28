@@ -44,7 +44,15 @@ router.get('/wintermute', (req, res, next) => {
 })
 
 router.get('/about', (req, res, next) => {
-  res.render('about');
+  let author = 'zeevo';
+  let entries = posts.getByAuthor(author)
+    .concat(projects.getByAuthor(author))
+    .sort((a, b) => {
+      return new Date(b.date) - new Date(a.date);
+    });
+  res.render('authors/zeevo', {
+    posts: entries
+  });
 })
 
 router.get('/posts', (req, res, next) => {
@@ -91,7 +99,7 @@ posts.getAuthors()
         return new Date(b.date) - new Date(a.date);
       });
     router.get('/authors/' + author, (req, res, next) => {
-      res.render('authors/zeevo', {
+      res.render('authors/' + author, {
         posts: entries
       })
     })
