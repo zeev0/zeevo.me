@@ -68,8 +68,8 @@ posts.all.forEach(post => {
   let next, prev;
   let n = posts.all.indexOf(post) + 1
   let p = posts.all.indexOf(post) - 1
-  if (n < posts.all.length) next = posts.all[n].url
-  if (p >= 0) prev = posts.all[p].url
+  if (n < posts.all.length) prev = posts.all[n].url
+  if (p >= 0) next = posts.all[p].url
   router.get(post.url, (req, res, nxt) => {
     res.render('posts/' + post.number, {
       post: post,
