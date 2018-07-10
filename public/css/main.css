@@ -204,8 +204,6 @@ hr {
   height: 11px;
   margin: 40px auto;
   border: 0;
-  background-image: url(img/hr%402x.png);
-  background-repeat: no-repeat;
   background-size: 100%
 }
 
@@ -245,7 +243,6 @@ body.draft:before {
   left: 0;
   right: 0;
   height: 8px;
-  background: url(img/stripes.png);
   background-size: 10px 8px;
   z-index: 2
 }
@@ -259,7 +256,6 @@ body.draft:before {
 }
 
 .outersc {
-  border: 1px solid black
 }
 
 @media screen and (min-width:1178px) {
@@ -771,7 +767,6 @@ body.post article .meta .avi {
 
 body {
   margin-top: 20px;
-  background-image: url("/img/fractal.png");
   color: #333;
 }
 

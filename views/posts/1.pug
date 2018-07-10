@@ -1,9 +1,0 @@
-//- {"title":"Hi","author":"zeevo","twitter":"@zeevosec","description":"","date":"01/02/2018","summary":"","category":"other"}
-extends ../post
-include ../authors/avis
-block header
-block meta
-  - var date = moment(post.date).format('MMMM Do, YYYY');
-  +zeevo_avi(date)
-block article
-  h3 - --------- - Hi.
