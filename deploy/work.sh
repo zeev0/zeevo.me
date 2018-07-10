@@ -4,8 +4,8 @@ set -e
 
 ### Configuration ###
 
-APP_DIR=~/zeevo.me
-GIT_URL=~/zeevo/zeevo.me.git
+APP_DIR=~/zeevo.io
+GIT_URL=~/zeevo/zeevo.io.git
 USER=$1
 
 ###
@@ -27,8 +27,8 @@ npm prune --production
 
 set +e
 if tmux info &> /dev/null; then 
-  tmux kill-session -t "zeevome"
+  tmux kill-session -t "zeevoio"
 fi
 set -e
 
-tmux new-session -d -s "zeevome" "sudo npm run prod"
+tmux new-session -d -s "zeevoio" "sudo npm run prod"
