@@ -9,7 +9,7 @@ REMOTE_SCRIPT_PATH=/tmp/deploy.sh
 APP_DIR=~/zeevo.me
 GIT_URL=~/zeevo.me.git
 IDENTITY_FILE=zeevome.pem
-BRANCH_NAME=$(git symbolic-ref -q HEAD)
+BRANCH_NAME=$(git symbolic-ref --short HEAD)
 
 ### Library ###
 
@@ -25,4 +25,5 @@ function run()
 run scp -i deploy/$IDENTITY_FILE deploy/work.sh $SERVER:$REMOTE_SCRIPT_PATH
 echo
 echo "---- Running deployment script on remote server ----"
-run ssh -i deploy/$IDENTITY_FILE $SERVER bash $REMOTE_SCRIPT_PATH $BRANCH_NAME
+echo "---- Branch : $BRANCH_NAME ----"
+run ssh -i deploy/$IDENTITY_FILE $SERVER "bash $REMOTE_SCRIPT_PATH $BRANCH_NAME"

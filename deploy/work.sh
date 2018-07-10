@@ -6,8 +6,9 @@ set -e
 
 APP_DIR=~/zeevo.me
 GIT_URL=~/zeevo/zeevo.me.git
-USER=$1
-BRANCH_NAME=$2
+BRANCH_NAME=$1
+
+echo $BRANCH_NAME
 
 ###
 
