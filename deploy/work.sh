@@ -35,4 +35,4 @@ if tmux info &> /dev/null; then
 fi
 set -e
 
-tmux new-session -d -s "zeevoio" "sudo npm run prod"
+tmux new-session -d -s "zeevoio" "npm run prod"
