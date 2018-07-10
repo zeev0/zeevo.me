@@ -6,7 +6,9 @@ set -e
 
 APP_DIR=~/zeevo.io
 GIT_URL=~/zeevo/zeevo.io.git
-USER=$1
+BRANCH_NAME=$1
+
+echo $BRANCH_NAME
 
 ###
 
@@ -16,9 +18,11 @@ set -x
 if [[ -e $APP_DIR ]]; then
   cd $APP_DIR
   git pull
+  git checkout $BRANCH_NAME
 else
   git clone $GIT_URL $APP_DIR
   cd $APP_DIR/
+  git checkout $BRANCH_NAME
 fi
 
 # Install dependencies
