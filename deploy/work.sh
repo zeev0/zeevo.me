@@ -5,10 +5,8 @@ set -e
 ### Configuration ###
 
 APP_DIR=~/zeevo.io
-GIT_URL=~/zeevo/zeevo.io.git
+GIT_URL=~/zeevo.io.git
 BRANCH_NAME=$1
-
-echo $BRANCH_NAME
 
 ###
 
