@@ -1,0 +1,12 @@
+//- {"title":"Setting up an HTTPS site using Nodejs, AWS EC2, Nginx, Let's Encrypt, and Namecheap", "author": "zeevo", "twitter":"@zeevosec", "date":"07/12/2018", "tagline": "The definitive guide to getting HTTPS for your site.", "keywords": "https,aws,ec2,nginx,letsencrypt,namecheap", "url": "setting-up-https-with-node-aws-letsencrypt", "summary":"", "category":"programming"}
+extends ../post
+include ../authors/avis
+include ../utils
+block header
+  h1=post.title 
+  .tagline=post.tagline
+block meta
+  - var date = moment(post.date).format('MMMM Do, YYYY');
+  +zeevo_avi(date)
+block article
+  h2 1. Create an AWS EC2 instance
