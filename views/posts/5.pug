@@ -68,6 +68,8 @@ block article
     div
       code mkdir deploy
     div
+      code cd deploy
+    div
       code touch deploy.sh runner.sh
   i deploy.sh
   pre
@@ -80,7 +82,7 @@ block article
       | 
       | USER=ubuntu
       | SERVER=$USER@your-ec2-address
-      | REMOTE_SCRIPT_PATH=/tmp/deploy.sh
+      | REMOTE_SCRIPT_PATH=/tmp/runner.sh
       | APP_DIR=~/yourproject
       | GIT_URL=~/yourproject.git
       | IDENTITY_FILE=yourkey.pem
