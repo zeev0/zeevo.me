@@ -72,7 +72,7 @@ h2 {
 h3,
 h4 {
   font-family: RobotoDraft, "Helvetica Neue", "Helvetica Neue", Arial, sans-serif;
-  font-weight: 400;
+  font-weight: 300;
   padding-top: 10px;
   margin-bottom: -6px;
   color: #444
@@ -202,9 +202,9 @@ hr {
   display: block;
   width: 321px;
   height: 11px;
-  margin: 40px auto;
+  margin: 20px auto;
   border: 0;
-  background-image: url(img/hr%402x.png);
+  background-image: url(img/hr.png);
   background-repeat: no-repeat;
   background-size: 100%
 }
@@ -225,11 +225,6 @@ pre {
     font-size: 17px;
     line-height: 25px
   }
-}
-
-code {
-  margin: 0 2px 0 3px;
-  letter-spacing: -.02em
 }
 
 h2 code {
