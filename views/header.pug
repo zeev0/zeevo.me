@@ -3,12 +3,12 @@ html(lang='en')
     head
     
         meta(charset='utf-8')
-        - let mtitle = 'zeevo.me'
+        - let mtitle = 'zeevo.io'
         - let mdescr = 'Programming, hacking, cyberpunk, ramblings, and code - A blog by zeevo.'
         - let mkeywords = 'zeevo'
         if title || (post && post.title && post.title !== '')
           - mtitle = title || post.title 
-          - mtitle = mtitle + ' - zeevo.me'
+          - mtitle = mtitle + ' - zeevo.io'
         if stitle
           - mtitle = stitle
         if description || (post && post.description && post.description !== '')
@@ -28,7 +28,7 @@ html(lang='en')
         if post && post.twitter
           meta(name="twitter:creator" content=post.twitter)
         meta(name="twitter:description" content=mdescr)
-        meta(name="twitter:image" content="https://zeevo.me/img/bedroom_square.png")
+        meta(name="twitter:image" content="https://zeevo.io/img/bedroom_square.png")
         meta(name="twitter:title" content=mtitle)
 
         title=mtitle

@@ -35,7 +35,7 @@ router.get('/', (req, res, next) => {
     posts: latest,
     title: 'Recent posts',
     tagline: 'Thoughts and writings',
-    stitle: 'zeevo.me'
+    stitle: 'zeevo.io'
   });
 })
 
