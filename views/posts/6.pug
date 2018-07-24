@@ -9,4 +9,34 @@ block meta
   - var date = moment(post.date).format('MMMM Do, YYYY');
   +zeevo_avi(date)
 block article
+  i beginning taken from 
+    a(href='/posts/deploy-node-project-to-aws') from previous blog
   h2 1. Create an AWS EC2 instance
+  p Log into 
+    a(href="https://aws.amazon.com/") AWS 
+    | and create an account if you don't have one already. Log in and you should see your dashboard, or a list
+    | of services
+  img(src='/img/posts/6-a.png')
+  p Select EC2. Then select Launch Instance.
+  img(src='/img/posts/6-b.png')
+  p If you're just prototyping a simple website then choosing the latest Ubuntu Server image is fine.
+    |  Make sure to save your private key somewhere safe.
+
+  h2 2. Connecting to your EC2 instance
+  p Test your new EC2 instance by connecting to it.
+  code ssh -i keyname.pem user@your-ec2-address
+  p Or press the Connect button while on your EC2 console for exact instructions.
+  p Your ec2 address looks something like 
+    code ec2-55-55-555-55.xx-yyyy-5.compute.amazonaws.com
+  p Success? Great good to go!
+
+  h2 3. Setup your Security Groups
+  p At the AWS Boardboard, find the link to "Security Groups" on the left
+  img(src='/img/posts/6-c.png') 
+  p Then click "Create"
+  img(src='/img/posts/6-e.png') 
+  p Make the following rules
+  img(src='/img/posts/6-d.png') 
+
+
+  
