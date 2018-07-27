@@ -31,12 +31,22 @@ block article
   p Success? Great good to go!
 
   h2 3. Setup your Security Groups
-  p At the AWS Boardboard, find the link to "Security Groups" on the left
+  p Let's open up some ports so requests can make it to our VM. At the AWS Boardboard, find the link to "Security Groups" on the left
   +limg('/img/posts/6-c.png') 
   p Then click "Create"
   +limg('/img/posts/6-e.png') 
   p Make the following rules
   +limg('/img/posts/6-d.png') 
+  p Click the "Create" button in the bottom right. 
+    | Next, go back to "Instances" and under "Actions" select "Networking"->"Change Security Groups" and 
+    | select your newly created security group. Mine was called something like 
+    i launch-wizard-1
+    | . Remember to click "Assign Security Groups" after you
+    | check the box.
+
+  h3 Create your Elastic IP
+  p This allows for better DNS.
+  +limg('/img/posts/6-f.png')
 
 
   
