@@ -51,6 +51,13 @@ block article
     | Next, select the created Elastic IP and select "Actions"->"Associate".
     | Then select your EC2 Instance. It's that easy.
   h2 5. Create and configure a Hosted Zone
+  p We will use the Route 53 service for this. Select it from the Services menu.
+  +limg('/img/posts/6-g.png')
+  p Select "Create Hosted Zone"
+  +limg('/img/posts/6-h.png')
+  p Hit "Create". Back at the Route 53 Dashboard, select the created Hosted Zone and click "Go to Record Sets".
+    | Click "Create Record Set", leave the Name field blank, and place your Elastic IP into the Value field. Then, hit Create.
+  p Hit "Create Record Set" again. Put "www" in the Name field, and place your Elastic IP into the Value field. Then, hit Create.
   h2 6. Set up Nginx
   h2 7. Run your App!
   h4 
