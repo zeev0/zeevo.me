@@ -26,9 +26,11 @@ block content
                 each pst in posts
                   - var date = moment(pst.date)
                   - var formattedDate = date.format('MMMM Do, YYYY');
+                  - var formattedTitle = pst.title
+                  - if (pst.title.length > 55) var formattedTitle = pst.title.slice(0, 55) + '...';
                   tr
                     td(class='title', style='text-align:left', data-title=pst.title) 
-                      a(href=pst.url) #{pst.title} 
+                      a(href=pst.url) #{formattedTitle} 
                     td(class='author')
                       a(href='/authors/' + pst.author) #{pst.author}
                     td(class='date', date-timestamp=date.format('X'), style="align:right") #{formattedDate}
@@ -38,9 +40,9 @@ block content
       var postList = new List('posts', {
         valueNames: [
           {
-            name: 'title'
+            name: 'title',
             data:['title']
-          }
+          },
           'category', 
           'author', 
           {

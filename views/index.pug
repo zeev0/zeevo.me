@@ -1,19 +1,25 @@
 extends header
 block content
-    body.home
-        .site-container(style="position: relative")
-            .site-header
-                include navbar
-            article
-              .meta
-                  block meta
-              .post
-                  block article
-            .wheel.table
-              ul(style="display:inline")
-                li
-                  a.button(href='/posts/' + cur) <
-                li
-                  a.button='random'
-                li
-                  a.button(href='/posts/' + next) >
+    .site-container
+        .site-header
+            include navbar
+            header
+              img(style='display:inline' src='/img/robotcircle2.png', width=45)
+              p(style='display:inline;padding-left:10px') Shane "zeevo" O'Neill
+              hr
+              h1 #{title}
+              .tagline
+                  | #{tagline}
+        article
+          if !posts.length
+            p(style="font-style:italic") Theres nothing here... 
+          each pst in posts
+            - var date = moment(pst.date).format('MMMM Do, YYYY');
+            div
+              .post-entry
+                  h2
+                    a(href=pst.url) #{pst.title}
+                    br
+                    span.post-date #{date}
+                  .post-detail
+                      .post-summary #{pst.description}
