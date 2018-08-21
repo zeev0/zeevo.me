@@ -29,9 +29,8 @@ block article
   p Your ec2 address looks something like 
     code ec2-55-55-555-55.xx-yyyy-5.compute.amazonaws.com
   p Success? Great good to go!
-
   h2 3. Setup your Security Groups
-  p Let's open up some ports so requests can make it to our VM. At the AWS Boardboard, find the link to "Security Groups" on the left
+  p Let's open up some ports so requests can make it to our VM. At the AWS Dashboard, find the link to "Security Groups" on the left
   +limg('/img/posts/6-c.png') 
   p Then click "Create"
   +limg('/img/posts/6-e.png') 
@@ -58,7 +57,30 @@ block article
   p Hit "Create". Back at the Route 53 Dashboard, select the created Hosted Zone and click "Go to Record Sets".
     | Click "Create Record Set", leave the Name field blank, and place your Elastic IP into the Value field. Then, hit Create.
   p Hit "Create Record Set" again. Put "www" in the Name field, and place your Elastic IP into the Value field. Then, hit Create.
+  p Next, click the #[strong Go to Record Sets] button. Take the dns servers in the #[strong Values] column of your NS record...
+  +limg('/img/posts/6-j.png')
+  p And set your Namecheap DNS servers to them. (without the period at the end)
+  +limg('/img/posts/6-i.png')
   h2 6. Set up Nginx
+  p Right. Now lets ssh into our EC2 instance and setup the 
+    a(href='https://www.nginx.com/blog/setting-up-nginx/') Nginx webserver.
+  pre
+    code
+      | sudo apt-get install nginx
+  p Navigating to your Elastic IP, you will see the default Nginx page.
+  p Next, let's setup Let's Encrypt using 
+    a(href='https://certbot.eff.org/') Certbot
+  pre
+    code
+      | apt-get update
+      | apt-get install software-properties-common
+      | add-apt-repository ppa:certbot/certbot
+      | apt-get update
+      | apt-get install python-certbot-nginx
+  p Let's edit our nginx config before creating a certificate.
+  pre
+    code
+      | 
   h2 7. Run your App!
   h4 
     a(href='/posts/deploy-node-project-to-aws') Checkout the previous blog on how to set up easy deployment!

@@ -227,11 +227,6 @@ pre {
   }
 }
 
-code {
-  margin: 0 2px 0 3px;
-  letter-spacing: -.02em
-}
-
 h2 code {
   font-size: 19px;
   line-height: 27px
