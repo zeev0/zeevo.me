@@ -4,8 +4,8 @@ set -e
 
 ### Configuration ###
 
-APP_DIR=~/zeevo.io
-GIT_URL=~/zeevo.io.git
+APP_DIR=~/shaneoneill.io
+GIT_URL=~/shaneoneill.io.git
 BRANCH_NAME=$1
 
 ###
@@ -29,8 +29,8 @@ npm prune --production
 
 set +e
 if tmux info &> /dev/null; then 
-  tmux kill-session -t "zeevoio"
+  tmux kill-session -t "shaneoneill.io"
 fi
 set -e
 
-tmux new-session -d -s "zeevoio" "npm run prod"
+tmux new-session -d -s "shaneoneill.io" "npm run prod"

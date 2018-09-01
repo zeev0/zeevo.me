@@ -35,7 +35,7 @@ router.get('/', (req, res, next) => {
     posts: latest,
     title: 'Recent posts',
     tagline: 'Thoughts and writings',
-    stitle: 'zeevo.io'
+    stitle: 'shaneoneill.io'
   });
 })
 
@@ -50,7 +50,7 @@ router.get('/about', (req, res, next) => {
     .sort((a, b) => {
       return new Date(b.date) - new Date(a.date);
     });
-  res.render('authors/zeevo', {
+  res.render('authors/shaneoneill', {
     posts: entries
   });
 })

@@ -6,8 +6,8 @@ set -e
 USER=ubuntu
 SERVER=$USER@ec2-18-191-11-78.us-east-2.compute.amazonaws.com
 REMOTE_SCRIPT_PATH=/tmp/deploy.sh
-APP_DIR=~/zeevo.io
-GIT_URL=~/zeevo.io.git
+APP_DIR=~/shaneoneill.io
+GIT_URL=~/shaneoneill.io.git
 IDENTITY_FILE=zeevome.pem
 BRANCH_NAME=$(git symbolic-ref --short HEAD)
 

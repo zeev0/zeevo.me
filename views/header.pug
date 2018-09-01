@@ -3,12 +3,12 @@ html(lang='en')
     head
     
         meta(charset='utf-8')
-        - let mtitle = 'zeevo.io'
-        - let mdescr = 'Programming, hacking, cyberpunk, ramblings, and code - A blog by zeevo.'
-        - let mkeywords = 'zeevo'
+        - let mtitle = 'shaneoneill.io'
+        - let mdescr = 'Programming, hacking, cyberpunk, ramblings, and code - A blog by Shane O\'Neill.'
+        - let mkeywords = 'shane oneill'
         if title || (post && post.title && post.title !== '')
           - mtitle = title || post.title 
-          - mtitle = mtitle + ' - zeevo.io'
+          - mtitle = mtitle + ' - shane oneill'
         if stitle
           - mtitle = stitle
         if description || (post && post.description && post.description !== '')
@@ -19,7 +19,7 @@ html(lang='en')
         meta(name='viewport', content='width=device-width,initial-scale=1')
         meta(name='description', content=mdescr)
         if post && post.author && post.author !== 'unknown'
-          meta(name="author", content="zeevo")
+          meta(name="author", content="Shane O'Neill")
         meta(name="keywords", content=mkeywords)
         meta(name="title", content=mtitle)
 
@@ -28,7 +28,7 @@ html(lang='en')
         if post && post.twitter
           meta(name="twitter:creator" content=post.twitter)
         meta(name="twitter:description" content=mdescr)
-        meta(name="twitter:image" content="https://zeevo.io/img/bedroom_square.png")
+        meta(name="twitter:image" content="https://shaneoneill.io/img/bedroom_square.png")
         meta(name="twitter:title" content=mtitle)
 
         title=mtitle

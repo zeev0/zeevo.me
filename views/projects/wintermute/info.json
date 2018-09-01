@@ -1,6 +1,6 @@
 {
   "title": "Wintermute",
-  "author": "zeevo",
+  "author":"shaneoneill",
   "template": "projects/wintermute",
   "url": "wintermute",
   "description": "A general purpose Discord bot that just works (and does trivia)",
