@@ -44,7 +44,7 @@ router.get('/wintermute', (req, res, next) => {
 })
 
 router.get('/about', (req, res, next) => {
-  let author = 'zeevo';
+  let author = 'shaneoneill';
   let entries = posts.getByAuthor(author)
     .concat(projects.getByAuthor(author))
     .sort((a, b) => {
