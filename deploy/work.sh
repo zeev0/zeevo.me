@@ -8,6 +8,8 @@ APP_DIR=~/shaneoneill.io
 GIT_URL=~/shaneoneill.io.git
 BRANCH_NAME=$1
 
+echo $BRANCH_NAME
+
 ###
 
 set -x
@@ -29,8 +31,8 @@ npm prune --production
 
 set +e
 if tmux info &> /dev/null; then 
-  tmux kill-session -t "shaneoneill.io"
+  tmux kill-session -t "zeevome"
 fi
 set -e
 
-tmux new-session -d -s "shaneoneill.io" "npm run prod"
+tmux new-session -d -s "zeevome" "sudo npm run prod"

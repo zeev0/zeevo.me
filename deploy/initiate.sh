@@ -4,7 +4,7 @@ set -e
 ### Configuration ###
 
 USER=ubuntu
-SERVER=$USER@ec2-18-191-11-78.us-east-2.compute.amazonaws.com
+SERVER=$USER@ec2-13-59-198-83.us-east-2.compute.amazonaws.com
 REMOTE_SCRIPT_PATH=/tmp/deploy.sh
 APP_DIR=~/shaneoneill.io
 GIT_URL=~/shaneoneill.io.git
