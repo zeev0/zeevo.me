@@ -31,8 +31,8 @@ npm prune --production
 
 set +e
 if tmux info &> /dev/null; then 
-  tmux kill-session -t "zeevome"
+  tmux kill-session -t "shaneoneillio"
 fi
 set -e
 
-tmux new-session -d -s "zeevome" "sudo npm run prod"
+tmux new-session -d -s "shaneoneillio" "sudo npm run prod"
