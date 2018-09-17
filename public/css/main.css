@@ -425,6 +425,18 @@ footer {
   }
 }
 
+@media screen and (min-width:768px) {
+  .site-container nav {
+    padding: 0 64px 24px
+  }
+}
+
+@media screen and (min-width:768px) {
+  .site-container .index-sig {
+    padding: 0 64px 24px
+  }
+}
+
 footer {
   padding: 0 20px;
   color: #7a7a7a
