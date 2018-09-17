@@ -79,7 +79,7 @@ posts.all.forEach(post => {
   if (n < posts.all.length) prev = posts.all[n].url
   if (p >= 0) next = posts.all[p].url
   router.get(post.url, (req, res, nxt) => {
-    res.render('posts/' + post.number, {
+    res.render(post.view, {
       post: post,
       cur: post.url,
       prev: prev,

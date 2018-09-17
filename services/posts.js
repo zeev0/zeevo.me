@@ -38,7 +38,6 @@ class PostService extends GenericService {
       var firstline = data.toString().split('\n')[0];
       var p = validateAndParse(firstline);
       p.view = postDir + '/' + view.slice(0, -4);
-      p.number = view.split('.')[0];
       if (!p.url) p.url = p.number;
       p.url = this.BASE_POST_LOC + p.url;
       if (p !== null) {
@@ -46,8 +45,13 @@ class PostService extends GenericService {
       }
     })
     posts.sort((a, b) => {
-      return b.number - a.number;
+      return new Date(a.date) - new Date(b.date);
     });
+    posts.map((post, i) => {
+      post.number = i + 1
+      return posts;
+    });
+    console.log(posts)
     this.all = posts;
   }
 
