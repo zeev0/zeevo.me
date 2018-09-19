@@ -18,6 +18,7 @@ block content
         article
           if !posts.length
             p(style="font-style:italic") Theres nothing here... 
+          - console.log(posts)
           each pst in posts
             - var date = moment(pst.date).format('MMMM Do, YYYY');
             div

@@ -51,6 +51,7 @@ class PostService extends GenericService {
       post.number = i + 1
       return posts;
     });
+    posts.sort((a, b) => b.number - a.number)
     console.log(posts)
     this.all = posts;
   }
