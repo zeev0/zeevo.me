@@ -48,8 +48,8 @@ class PostService extends GenericService {
       return new Date(a.date) - new Date(b.date);
     });
     posts.map((post, i) => {
-      post.number = i + 1
-      return posts;
+      post.number = i + 1;
+      return post;
     });
     posts.sort((a, b) => b.number - a.number)
     console.log(posts)

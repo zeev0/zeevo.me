@@ -250,11 +250,15 @@ body.draft:before {
   max-width: 912px;
   margin: 0;
   background-color: white;
-  border-radius: 10px;
 }
 
-.outersc {
-  border: 1px solid black
+@media screen and (min-width:768px) {
+  .outersc {
+    border: 1px solid black;
+  }
+  .site-container {
+    border-radius: 10px;
+  }
 }
 
 @media screen and (min-width:1178px) {
@@ -777,9 +781,14 @@ body.post article .meta .avi {
 }
 
 body {
-  margin-top: 20px;
-  background-image: url("/img/fractal.png");
   color: #333;
+}
+
+@media screen and (min-width:768px) {
+  body {
+    margin-top: 20px;
+    background-image: url("/img/fractal.png");
+  }
 }
 
 .fab {
